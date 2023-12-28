@@ -15,7 +15,7 @@ export default function Home() {
         />
         <meta property="og:image" content="/20231206_173942.jpg" />
       </Head>
-      <main className="min-h-screen bg-black/5 flex flex-col items-start justify-center p-12 md:p-16">
+      <main className="min-h-screen bg-black/25 flex flex-col items-start justify-center p-12 md:p-16">
         <div className="space-y-6">
           <div className="h-32 w-32 md:h-48 md:w-48 ">
             <Image
