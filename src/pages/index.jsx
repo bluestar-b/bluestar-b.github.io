@@ -19,13 +19,15 @@ export default function Home() {
       <main className="min-h-screen bg-black/25 flex flex-col items-start justify-center p-12 md:p-16">
         <div className="space-y-6">
           <div className="h-32 w-32 md:h-48 md:w-48 ">
-            <Image
+            P.S. I WILL PUT IT BACK LATER
+           {/* <Image
               className="rounded-full"
               width={256}
               height={256}
               src="/pfp.webp"
               alt="Profile picture"
             />
+  */}
           </div>
           <div className="space-y-2">
             <h1 className="font-bold text-4xl inline-block">bluestar</h1>
