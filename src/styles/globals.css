@@ -3,11 +3,5 @@
 @tailwind utilities;
 
 :root {
-  --background-image: url("/bg.webp");
-  color: #ffffff;
-  background-image: var(--background-image);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;
+  font-family: system-ui;
 }

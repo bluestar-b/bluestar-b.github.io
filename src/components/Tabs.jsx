@@ -5,7 +5,7 @@ import ExternalLink from "./ExternalLink"
 
 const Tabs = () => {
   const TabStyle =
-    "p-1 font-bold mr-4 ui-selected:outline-none ui-selected:border-b-2 hover:border-b-2"
+    "p-1 font-bold mr-4 ui-selected:outline-none ui-selected:border-b-2 hover:border-b-2 "
   const FavMusic = [
     {
       title: "Asu no Yozora Shoukaihan",
