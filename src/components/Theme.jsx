@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { useTheme } from 'next-themes'
+import { useState, useEffect } from "react"
+import { useTheme } from "next-themes"
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
@@ -15,36 +15,32 @@ const ThemeSwitch = () => {
   }
 
   const toggleTheme = () => {
-    if (theme === 'dark') {
-      setTheme('light')
-    } else if (theme === 'light') {
-      setTheme('system')
+    if (theme === "dark") {
+      setTheme("light")
+    } else if (theme === "light") {
+      setTheme("system")
     } else {
-      setTheme('dark')
+      setTheme("dark")
     }
   }
 
   const getThemeCharacter = () => {
-    if (theme === 'dark') {
-      return 'Dark'
-    } else if (theme === 'light') {
-      return 'White'
+    if (theme === "dark") {
+      return "Dark"
+    } else if (theme === "light") {
+      return "White"
     } else {
-      return 'System'
+      return "System"
     }
   }
 
   return (
-   
-      <button
+    <button
       className="fixed top-2 right-2 rounded-lg md:text-lg font-bold border p-2 items-center h-fit focus:outline-none"
       onClick={toggleTheme}
     >
       <span className=" dark:text-white">{getThemeCharacter()}</span>
     </button>
-
-
-
   )
 }
 

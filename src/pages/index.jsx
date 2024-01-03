@@ -18,11 +18,11 @@ export default function Home() {
         <meta property="og:image" content="/20231206_173942.jpg" />
       </Head>
       <main className="min-h-screen flex flex-col items-start justify-center p-12 md:p-16">
-      <ThemeSwitch />
+        <ThemeSwitch />
         <div className="space-y-6">
           <div className="h-32 w-32 md:h-48 md:w-48 ">
             P.S. I WILL PUT IT BACK LATER
-           {/* <Image
+            {/* <Image
               className="rounded-full"
               width={256}
               height={256}
