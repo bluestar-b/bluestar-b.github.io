@@ -1,10 +1,7 @@
 import Head from "next/head"
-import { Inter } from "next/font/google"
 import Tabs from "@/components/Tabs"
 import Badge from "@/components/Badge"
 import Image from "next/image"
-
-const inter = Inter({ subsets: ["latin"], weight: "500" })
 
 export default function Home() {
   return (
@@ -17,9 +14,7 @@ export default function Home() {
         />
         <meta property="og:image" content="/20231206_173942.jpg" />
       </Head>
-      <main
-        className={`flex min-h-screen flex-col items-start justify-center p-12 md:flex-row md:p-16 ${inter.className}`}
-      >
+      <main className="flex min-h-screen flex-col items-start justify-center p-12 md:flex-row md:p-16">
         <div className="flex-1 space-y-6">
           <div className="h-32 w-32 md:h-48 md:w-48 ">
             <Image

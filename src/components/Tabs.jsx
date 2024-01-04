@@ -1,3 +1,4 @@
+"use client"
 import { Tab } from "@headlessui/react"
 import MessageArea from "./MessageArea"
 import FavoriteMusicList from "./FavoriteMusicList"
