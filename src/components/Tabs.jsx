@@ -1,28 +1,10 @@
 import { Tab } from "@headlessui/react"
 import MessageArea from "./MessageArea"
-import Link from "next/link"
-import ExternalLink from "./ExternalLink"
+import FavoriteMusicList from "./FavoriteMusicList"
 
 const Tabs = () => {
   const TabStyle =
     "p-1 font-bold mr-4 ui-selected:outline-none ui-selected:border-b-2 hover:border-b-2 "
-  const FavMusic = [
-    {
-      title: "Asu no Yozora Shoukaihan",
-      artist: "Orangestar",
-      link: "https://youtu.be/XogSflwXgpw",
-    },
-    {
-      title: "Kuusou Ressha",
-      artist: "Orangestar",
-      link: "https://youtu.be/xzoShzMIlIM",
-    },
-    {
-      title: "What I've done",
-      artist: "Linkin Park",
-      link: "https://youtu.be/8sgycukafqQ",
-    },
-  ]
 
   return (
     <Tab.Group>
@@ -41,21 +23,7 @@ const Tabs = () => {
         </Tab.Panel>
         <Tab.Panel>
           <MessageArea>
-            <div className="justify-start">
-              {FavMusic.map((music, index) => (
-                <div className="mt-2 p-3 border rounded-md" key={index}>
-                  <div>
-                    <div className="font-bold text-lg">
-                      <ExternalLink to={music.link}>{music.title}</ExternalLink>
-                    </div>{" "}
-                    <div className="font-bold">
-                      Artist:{" "}
-                      <span className="font-semibold ">{music.artist}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <FavoriteMusicList />
           </MessageArea>
         </Tab.Panel>
       </Tab.Panels>

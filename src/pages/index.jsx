@@ -1,10 +1,10 @@
-import Image from "next/image"
 import Head from "next/head"
 import { Inter } from "next/font/google"
 import Tabs from "@/components/Tabs"
-import ThemeSwitch from "@/components/Theme"
+import Badge from "@/components/Badge"
+import Image from "next/image"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], weight: "500" })
 
 export default function Home() {
   return (
@@ -13,30 +13,34 @@ export default function Home() {
         <title>bluestar</title>
         <meta
           name="description"
-          content="I struggle with myself, but it always ends with me, and things aren't getting better."
+          content="Life is boring, but life still has colors to explore."
         />
         <meta property="og:image" content="/20231206_173942.jpg" />
       </Head>
-      <main className="min-h-screen flex flex-col items-start justify-center p-12 md:p-16">
-        <ThemeSwitch />
-        <div className="space-y-6">
+      <main
+        className={`flex min-h-screen flex-col items-start justify-center p-12 md:flex-row md:p-16 ${inter.className}`}
+      >
+        <div className="flex-1 space-y-6">
           <div className="h-32 w-32 md:h-48 md:w-48 ">
-            P.S. I WILL PUT IT BACK LATER
-            {/* <Image
+            <Image
               className="rounded-full"
-              width={256}
-              height={256}
-              src="/pfp.webp"
+              width={200}
+              height={200}
+              src="/pfp.jpeg"
               alt="Profile picture"
             />
-  */}
           </div>
           <div className="space-y-2">
-            <h1 className="font-bold text-4xl inline-block">bluestar</h1>
-            <h1 className="font-semibold text-lg">gayware developer</h1>
+            <h1 className="inline-block text-3xl font-bold md:text-4xl">
+              bluestar
+            </h1>
+            <h1 className="text-lg font-semibold">gayware developer</h1>
+            <Badge Hoverable>They/Them</Badge>
+            <Badge Hoverable>Pullstack dev</Badge>
           </div>
           <Tabs />
         </div>
+        {/* for additional content in future */}
       </main>
     </>
   )

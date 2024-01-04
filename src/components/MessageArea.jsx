@@ -1,6 +1,6 @@
 const MessageArea = ({ children }) => {
   return (
-    <div className=" space-x-4 text-md max-w-md md:max-w-lg overflow-hidden overflow-ellipsis">
+    <div className=" text-md max-w-md space-x-4 overflow-hidden overflow-ellipsis md:max-w-lg">
       {children}
     </div>
   )
