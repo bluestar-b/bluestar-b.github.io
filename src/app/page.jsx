@@ -1,29 +1,24 @@
-import Head from "next/head"
 import Tabs from "@/components/Tabs"
 import Badge from "@/components/Badge"
-import Image from "next/image"
+import Weather from "@/components/Weather"
+import Avatar from "@/components/Avatar"
+import Profile from "@/components/Profile"
 
 export default function Home() {
   return (
     <>
-      <main className="flex min-h-screen flex-col items-start justify-center p-12 md:flex-row md:p-16">
+      <main className="flex min-h-screen flex-col items-start justify-center p-12 md:flex-row md:p-20">
         <div className="flex-1 space-y-6">
-          <div className="h-32 w-32 md:h-48 md:w-48 ">
-            <Image
-              className="rounded-full"
-              width={200}
-              height={200}
-              src="/pfp.jpeg"
-              alt="Profile picture"
-            />
+          <div className="flex h-fit items-center space-x-4">
+            <Avatar />
+            <Profile />
           </div>
-          <div className="space-y-2">
-            <h1 className="inline-block text-3xl font-bold md:text-4xl">
-              bluestar
-            </h1>
-            <h1 className="text-lg font-semibold">gayware developer</h1>
+          <div className="">
             <Badge Hoverable>They/Them</Badge>
             <Badge Hoverable>Pullstack dev</Badge>
+            <Badge Hoverable>
+              <Weather />
+            </Badge>
           </div>
           <Tabs />
         </div>

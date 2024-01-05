@@ -7,12 +7,13 @@ const Badge = ({ children, Hoverable }) => {
     "w-fit",
     "items-center",
     "rounded-md",
-    "border",
+    "border-2",
     "px-2.5",
     "py-0.5",
     "text-sm",
     "font-bold",
     "transition-colors",
+    "mt-1",
     Hoverable && "hover:text-black hover:bg-white",
   )
 
