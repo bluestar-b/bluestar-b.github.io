@@ -8,6 +8,7 @@ const Badge = ({ children, Hoverable }) => {
     "items-center",
     "rounded-md",
     "border-2",
+    "border-white",
     "px-2.5",
     "py-0.5",
     "text-sm",
