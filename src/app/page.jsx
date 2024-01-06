@@ -6,7 +6,7 @@ import Profile from "@/components/Profile"
 export default function Home() {
   return (
     <>
-      <main className="flex h-screen flex-col justify-center p-11 md:flex-row md:p-16">
+      <main className="flex h-screen flex-col items-center justify-center p-8 md:flex-row md:p-16">
         <div className="space-y-4">
           <Profile />
 

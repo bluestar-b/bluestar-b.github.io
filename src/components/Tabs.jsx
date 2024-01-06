@@ -27,23 +27,22 @@ const Tabs = () => {
             about it, I incredibly understood it faster. I focused on it too
             much, and this way,
             <br />
-            I've been speedrunning the process of learning{" "}
+            I've been speedrunning the process of learning
             <LinkIcon to="https://python.org/" icon="/icons/python.svg">
               Python
-            </LinkIcon>{" "}
+            </LinkIcon>
             and
-            <LinkIcon icon="/icons/javascript.svg">JavaScript</LinkIcon> for a
+            <LinkIcon icon="/icons/javascript.svg">JavaScript</LinkIcon>for a
             year now.
             <LinkIcon to="https://go.dev/" icon="/icons/golang.svg">
               Golang
-            </LinkIcon>{" "}
+            </LinkIcon>
             has been my best friend for a moment. I enjoy network programming,
             cycling stuff.
             <div className="mb-4 mt-1">
               <div className=" text-base font-light italic leading-relaxed text-pink-300">
-                And the year 2023 told me that "Life is boring, but life still
-                has colors to explore. Find a new color or make that color
-                yourself."
+                "Life is boring, but life still has colors to explore. Find a
+                new color or make that color yourself."
               </div>
               - 2023
             </div>
@@ -68,7 +67,13 @@ const LinkIcon = ({ children, to, icon }) => {
       href={to || ""}
       className="ml-1 mr-1 inline-flex items-center rounded border border-neutral-500 bg-neutral-900 p-1 text-sm leading-4 text-white no-underline"
     >
-      <Image src={icon} alt="icon" className="mr-1 h-4 w-auto" width={32} height={32} />{" "}
+      <Image
+        src={icon}
+        alt="icon"
+        className="mr-1 h-4 w-auto"
+        width={32}
+        height={32}
+      />{" "}
       {children}
     </Link>
   )
