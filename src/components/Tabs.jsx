@@ -68,7 +68,7 @@ const LinkIcon = ({ children, to, icon }) => {
       href={to || ""}
       className="ml-1 mr-1 inline-flex items-center rounded border border-neutral-500 bg-neutral-900 p-1 text-sm leading-4 text-white no-underline"
     >
-      <Image src={icon} className="mr-1 h-4 w-auto" width={32} height={32} />{" "}
+      <Image src={icon} alt="icon" className="mr-1 h-4 w-auto" width={32} height={32} />{" "}
       {children}
     </Link>
   )
