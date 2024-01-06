@@ -14,7 +14,7 @@ const Profile = () => {
   const subtitleClasses = clsx("text-md", "md:text-lg", "font-semibold")
 
   return (
-    <div>
+    <>
       <div className={imageContainerClasses}>
         <Image
           className={imageClasses}
@@ -29,7 +29,7 @@ const Profile = () => {
         <h1 className={titleClasses}>bluestar</h1>
         <h1 className={subtitleClasses}>gayware developer</h1>
       </div>
-    </div>
+    </>
   )
 }
 
