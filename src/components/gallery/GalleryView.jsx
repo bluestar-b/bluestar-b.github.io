@@ -15,10 +15,7 @@ const GalleryView = () => {
     <div>
       <div className="mt-4 grid grid-cols-2 gap-4">
         {imageList.map((filename, index) => (
-          <Dialog image={`${prefix}${filename}`}>
-      
-            <Photo key={index} src={`${prefix}${filename}`} />
-          </Dialog>
+          <Photo key={index} src={`${prefix}${filename}`} />
         ))}
       </div>
     </div>

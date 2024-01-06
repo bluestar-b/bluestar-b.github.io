@@ -19,9 +19,9 @@ const Dialog = ({ children, image }) => {
           className="fixed inset-0 z-10 flex items-center justify-center"
           onClick={handleClose}
         >
-          <div className="fixed inset-0 bg-black opacity-90"></div>
+          <div className="fixed inset-0 bg-black opacity-45"></div>
           <div className="relative z-20 w-full max-w-md  p-4">
-            <img className="rounded-lg" src={image} alt="lightbox img"/>
+            <img className="rounded-lg" src={image} alt="lightbox img" />
           </div>
         </div>
       )}
