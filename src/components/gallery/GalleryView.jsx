@@ -1,4 +1,4 @@
-import Photo from "@/components/gallery/Photo"
+import Photo from "./Photo"
 
 const GalleryView = () => {
   const imageList = [
@@ -12,7 +12,7 @@ const GalleryView = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 mt-4">
         {imageList.map((filename, index) => (
           <Photo key={index} src={`${prefix}${filename}`} />
         ))}
