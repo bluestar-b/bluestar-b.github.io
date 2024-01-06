@@ -15,7 +15,7 @@ const Badge = ({ children, Hoverable }) => {
     "font-bold",
     "transition-colors",
     "mt-1",
-    Hoverable && "hover:text-black hover:bg-white hover:border-white/80",
+    Hoverable && "hover:text-black hover:bg-white",
   )
 
   return <div className={badgeClasses}>{children}</div>
