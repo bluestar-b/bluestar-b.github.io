@@ -8,15 +8,8 @@ export const metadata = {
   metadataBase: new URL("https://mac.notmycode.dev/"),
   openGraph: {
     title: "bluestar",
-    description: "Life is boring, but life still has colors to explore.",
+    description: "It works on my machine",
     siteName: "bluestar",
-    images: [
-      {
-        url: "/20231206_173942.jpg",
-        width: 1800,
-        height: 1600,
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
