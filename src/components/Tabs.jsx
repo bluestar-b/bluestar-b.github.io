@@ -2,6 +2,7 @@
 import { Tab } from "@headlessui/react"
 import MessageArea from "./MessageArea"
 import FavoriteMusicList from "./FavoriteMusicList"
+import GalleryView from "./gallery/GalleryView"
 
 const Tabs = () => {
   const TabStyle =
@@ -12,6 +13,7 @@ const Tabs = () => {
       <Tab.List>
         <Tab className={TabStyle}>About</Tab>
         <Tab className={TabStyle}>Fav music</Tab>
+        <Tab className={TabStyle}>Gallery</Tab>
       </Tab.List>
       <Tab.Panels>
         <Tab.Panel>
@@ -26,6 +28,9 @@ const Tabs = () => {
           <MessageArea>
             <FavoriteMusicList />
           </MessageArea>
+        </Tab.Panel>
+        <Tab.Panel>
+          <GalleryView />
         </Tab.Panel>
       </Tab.Panels>
     </Tab.Group>

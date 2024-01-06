@@ -12,7 +12,7 @@ export const metadata = {
     siteName: "bluestar",
     images: [
       {
-        url: "./20231206_173942.jpg",
+        url: "/20231206_173942.jpg",
         width: 1800,
         height: 1600,
       },

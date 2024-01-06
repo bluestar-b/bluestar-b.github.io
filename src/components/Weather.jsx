@@ -27,7 +27,6 @@ export default async function Weather() {
   const data = await getWeather()
   const temperature = data.main.temp
   const location = `${data.name}, ${data.sys.country}`
-  console.log(data)
   return (
     <div>
       {location}, {temperature}°C

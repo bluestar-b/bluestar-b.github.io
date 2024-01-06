@@ -22,7 +22,7 @@ const FavoriteMusicList = () => {
   return (
     <div className="justify-start">
       {MusicList.map((music, index) => (
-        <div className="mt-2 rounded-md border p-3" key={index}>
+        <div className="mt-2 w-full rounded-md border p-3" key={index}>
           <div>
             <div className="text-lg font-bold">
               <ExternalLink to={music.link}>{music.title}</ExternalLink>
