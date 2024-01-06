@@ -11,23 +11,25 @@ const Profile = () => {
   )
   const imageClasses = clsx("rounded-xl")
   const titleClasses = clsx("text-2xl", "font-bold", "md:text-4xl")
-  const subtitleClasses = clsx("text-md", "md:text-lg", "font-semibold")
+  const subtitleClasses = clsx("text-sm", "md:text-lg", "font-semibold")
 
   return (
     <>
-      <div className={imageContainerClasses}>
-        <Image
-          className={imageClasses}
-          width={180}
-          height={180}
-          quality={80}
-          src="/pfp.jpeg"
-          alt="Profile picture"
-        />
-      </div>
-      <div className="">
-        <h1 className={titleClasses}>bluestar</h1>
-        <h1 className={subtitleClasses}>gayware developer</h1>
+      <div className="flex h-fit items-center space-x-4">
+        <div className={imageContainerClasses}>
+          <Image
+            className={imageClasses}
+            width={180}
+            height={180}
+            quality={80}
+            src="/pfp.jpeg"
+            alt="Profile picture"
+          />
+        </div>
+        <div className="">
+          <h1 className={titleClasses}>bluestar</h1>
+          <h1 className={subtitleClasses}>gayware dev</h1>
+        </div>
       </div>
     </>
   )

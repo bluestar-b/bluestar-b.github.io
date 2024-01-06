@@ -22,7 +22,10 @@ const FavoriteMusicList = () => {
   return (
     <div className="justify-center">
       {MusicList.map((music, index) => (
-        <div className="mt-2  min-w-full overflow-hidden overflow-ellipsis rounded-md border-2 p-3" key={index}>
+        <div
+          className="mt-2  min-w-full overflow-hidden overflow-ellipsis rounded-md border-2 p-3"
+          key={index}
+        >
           <div>
             <div className="text-lg font-bold">
               <ExternalLink to={music.link}>{music.title}</ExternalLink>

@@ -1,3 +1,4 @@
+import Dialog from "./LightBox"
 import Photo from "./Photo"
 
 const GalleryView = () => {
@@ -12,9 +13,12 @@ const GalleryView = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4 mt-4">
+      <div className="mt-4 grid grid-cols-2 gap-4">
         {imageList.map((filename, index) => (
-          <Photo key={index} src={`${prefix}${filename}`} />
+          <Dialog image={`${prefix}${filename}`}>
+      
+            <Photo key={index} src={`${prefix}${filename}`} />
+          </Dialog>
         ))}
       </div>
     </div>

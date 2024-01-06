@@ -8,9 +8,8 @@ export default function Home() {
     <>
       <main className="flex h-screen flex-col justify-center p-11 md:flex-row md:p-16">
         <div className="space-y-4">
-          <div className="flex h-fit items-center space-x-4">
-            <Profile />
-          </div>
+          <Profile />
+
           <div className="mb-2">
             <Badge Hoverable>They/Them</Badge>
             <Badge Hoverable>Pullstack dev</Badge>
