@@ -8,7 +8,7 @@ import Image from "next/image"
 
 const Tabs = () => {
   const TabStyle =
-    "p-1 font-bold mr-4 ui-selected:outline-none ui-selected:border-b-2 hover:border-b-2 "
+    "p-1 font-bold mr-4 ui-selected:outline-none dark:ui-selected:border-white ui-selected:border-black ui-selected:border-b-2 hover:border-b-2"
 
   return (
     <Tab.Group>
@@ -40,7 +40,7 @@ const Tabs = () => {
             has been my best friend for a moment. I enjoy network programming,
             cycling stuff.
             <div className="mb-4 mt-1">
-              <div className=" text-base font-light italic leading-relaxed text-pink-300">
+              <div className=" text-base font-light italic leading-relaxed text-pink-600 dark:text-pink-300">
                 "Life is boring, but life still has colors to explore. Find a
                 new color or make that color yourself."
               </div>
@@ -65,7 +65,7 @@ const LinkIcon = ({ children, to, icon }) => {
   return (
     <Link
       href={to || ""}
-      className="ml-1 mr-1 inline-flex items-center rounded border border-neutral-500 bg-neutral-900 p-1 text-sm leading-4 text-white no-underline"
+      className="ml-1 mr-1 inline-flex items-center rounded border border-neutral-400 bg-neutral-200 dark:border-neutral-500 dark:bg-neutral-900 p-1 text-sm leading-4 text-black dark:text-white no-underline"
     >
       <Image
         src={icon}

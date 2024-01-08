@@ -8,14 +8,15 @@ const Badge = ({ children, Hoverable }) => {
     "items-center",
     "rounded-md",
     "border-2",
-    "border-white",
+    "dark:border-white",
     "px-2.5",
     "py-0.5",
     "text-sm",
     "font-bold",
     "transition-colors",
     "mt-1",
-    Hoverable && "hover:text-black hover:bg-white",
+    "border-black",
+    Hoverable && "dark:hover:text-black dark:hover:bg-white",
   )
 
   return <div className={badgeClasses}>{children}</div>

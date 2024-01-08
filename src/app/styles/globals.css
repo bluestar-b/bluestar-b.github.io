@@ -3,7 +3,24 @@
 @tailwind utilities;
 
 :root {
-  font-family: system-ui;
-  background-color: black;
-  color: white;
+  --background-color-dark: black;
+  --text-color-dark: white;
+  --background-color-light: white;
+  --text-color-light: black;
+  
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+  }
+}
+
