@@ -8,6 +8,11 @@ const FavoriteMusicList = () => {
       link: "https://youtu.be/XogSflwXgpw",
     },
     {
+      title: "Natsuiro Answer",
+      artist: "Orangestar",
+      link: "https://youtu.be/S6_zybtKN5k",
+    },
+    {
       title: "Kuusou Ressha",
       artist: "Orangestar",
       link: "https://youtu.be/xzoShzMIlIM",
