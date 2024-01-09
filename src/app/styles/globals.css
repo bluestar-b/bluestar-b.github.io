@@ -7,7 +7,6 @@
   --text-color-dark: white;
   --background-color-light: white;
   --text-color-light: black;
-  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +22,3 @@
     color: var(--text-color-light);
   }
 }
-

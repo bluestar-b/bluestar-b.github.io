@@ -65,7 +65,7 @@ const LinkIcon = ({ children, href, icon }) => {
   return (
     <Link
       href={href || ""}
-      className="ml-1 mr-1 inline-flex items-center rounded border border-neutral-400 bg-neutral-200 dark:border-neutral-500 dark:bg-neutral-900 p-1 text-sm leading-4 text-black dark:text-white no-underline"
+      className="ml-1 mr-1 inline-flex items-center rounded border border-neutral-400 bg-neutral-200 p-1 text-sm leading-4 text-black no-underline dark:border-neutral-500 dark:bg-neutral-900 dark:text-white"
     >
       <Image
         src={icon}
