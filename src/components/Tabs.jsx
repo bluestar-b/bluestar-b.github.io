@@ -28,13 +28,13 @@ const Tabs = () => {
             much, and this way,
             <br />
             I've been speedrunning the process of learning
-            <LinkIcon to="https://python.org/" icon="/icons/python.svg">
+            <LinkIcon href="https://python.org/" icon="/icons/python.svg">
               Python
             </LinkIcon>
             and
             <LinkIcon icon="/icons/javascript.svg">JavaScript</LinkIcon>for a
             year now.
-            <LinkIcon to="https://go.dev/" icon="/icons/golang.svg">
+            <LinkIcon href="https://go.dev/" icon="/icons/golang.svg">
               Golang
             </LinkIcon>
             has been my best friend for a moment. I enjoy network programming,
@@ -61,10 +61,10 @@ const Tabs = () => {
   )
 }
 
-const LinkIcon = ({ children, to, icon }) => {
+const LinkIcon = ({ children, href, icon }) => {
   return (
     <Link
-      href={to || ""}
+      href={href || ""}
       className="ml-1 mr-1 inline-flex items-center rounded border border-neutral-400 bg-neutral-200 dark:border-neutral-500 dark:bg-neutral-900 p-1 text-sm leading-4 text-black dark:text-white no-underline"
     >
       <Image

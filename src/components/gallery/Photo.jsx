@@ -5,7 +5,7 @@ const Photo = ({ src }) => {
     <div className="group relative">
       <Image
         alt="???????"
-        quality={40}
+        quality={30}
         className="h-auto w-full rounded-lg object-cover"
         height={200}
         src={src}

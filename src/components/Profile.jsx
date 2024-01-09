@@ -1,7 +1,20 @@
+"use client"
 import Image from "next/image"
 import clsx from "clsx"
+import { useEffect, useState } from "react"
 
 const Profile = () => {
+  const [clickCount, setClickcount] = useState(0)
+  const handleClick = () => {
+    setClickcount(prevCount => prevCount + 1);
+  };
+  useEffect(() => {
+
+    if (clickCount > 20) {
+      window.location.href = 'https://en.wikipedia.org/wiki/Nazi_Germany';
+    }
+  }, [clickCount]);
+
   const imageContainerClasses = clsx(
     "h-32",
     "w-32",
@@ -18,6 +31,7 @@ const Profile = () => {
       <div className="flex h-fit items-center space-x-4">
         <div className={imageContainerClasses}>
           <Image
+          onClick={handleClick}
             className={imageClasses}
             width={180}
             height={180}
