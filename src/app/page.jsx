@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <main className="flex h-screen flex-col items-center justify-center p-8 md:flex-row md:p-16">
-        <div className="space-y-4">
+        <div className="mt-6">
           <Profile />
 
           <div className="mb-2">
