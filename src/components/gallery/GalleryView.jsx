@@ -1,4 +1,3 @@
-import Dialog from "./LightBox"
 import Photo from "./Photo"
 
 const GalleryView = () => {
