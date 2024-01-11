@@ -25,9 +25,7 @@ const Tabs = () => {
             A 15 y/o space enthusiast and a non-formal student 🚀. Back in 2020,
             since I discovered what programming is and started learning more
             about it, I incredibly understood it faster. I focused on it too
-            much, and this way,
-            <br />
-            I&apos;ve been speedrunning the process of learning
+            much, and this way, I&apos;ve been speedrunning the process of learning
             <LinkIcon href="https://python.org/" icon="/icons/python.svg">
               Python
             </LinkIcon>
