@@ -1,6 +1,9 @@
 import { getNotes } from "@/actions/db/getNotes"
 import { formatDate } from "@/lib/formatDate"
 import Link from "next/link"
+
+export const revalidate = 0
+
 export default async function Page() {
   const noteList = await getNotes()
   return (
