@@ -3,7 +3,7 @@ export default function NotFound() {
   return (
     <div className="flex h-screen flex-col items-center justify-center">
       <p className="text-md font-bold md:text-2xl">
-        Oops! The page you're looking for is lost in space.
+        Oops! The page you&apos;re looking for is lost in space.
       </p>
       <Link
         href="/"

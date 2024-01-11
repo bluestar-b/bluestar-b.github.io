@@ -17,7 +17,7 @@ export default async function Page() {
             <div>
               <span className="line-clamp-2 text-sm md:text-lg">
                 <Link
-                  className="text-xs hover:underline hover:underline-offset-1 md:text-base"
+                  className="text-xs underline-offset-4 hover:underline md:text-base"
                   href={`/note/${note.id}`}
                 >
                   {note.title} - {formatDate(note.createat)}
