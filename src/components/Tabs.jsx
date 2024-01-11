@@ -20,14 +20,14 @@ const Tabs = () => {
       <Tab.Panels>
         <Tab.Panel>
           <MessageArea>
-            Hello, I'm Mac (aka bluestar),
+            Hello, I&apos;m Mac (aka bluestar),
             <br />
             A 15 y/o space enthusiast and a non-formal student 🚀. Back in 2020,
             since I discovered what programming is and started learning more
             about it, I incredibly understood it faster. I focused on it too
             much, and this way,
             <br />
-            I've been speedrunning the process of learning
+            I&apos;ve been speedrunning the process of learning
             <LinkIcon href="https://python.org/" icon="/icons/python.svg">
               Python
             </LinkIcon>
@@ -40,9 +40,9 @@ const Tabs = () => {
             has been my best friend for a moment. I enjoy network programming,
             cycling stuff.
             <div className="mb-4 mt-1">
-              <div className=" text-base font-light italic leading-relaxed text-pink-600 dark:text-pink-300">
-                "Life is boring, but life still has colors to explore. Find a
-                new color or make that color yourself."
+              <div className="text-base font-light italic leading-relaxed text-pink-600 dark:text-pink-300">
+                &quot;Life is boring, but life still has colors to explore. Find
+                a new color or make that color yourself.&quot;
               </div>
               - 2023
             </div>
