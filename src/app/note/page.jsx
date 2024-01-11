@@ -6,6 +6,8 @@ export const revalidate = 0
 
 export default async function Page() {
   const noteList = await getNotes()
+  noteList.sort((a, b) => new Date(b.createat) - new Date(a.createat))
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
       <div className="h-fit p-2">

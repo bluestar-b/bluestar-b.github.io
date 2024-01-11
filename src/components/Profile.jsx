@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image"
+import Link from "next/link"
 import clsx from "clsx"
 import { useEffect, useState } from "react"
 
@@ -9,7 +10,7 @@ const Profile = () => {
     setClickcount((prevCount) => prevCount + 1)
   }
   useEffect(() => {
-    if (clickCount > 20) {
+    if (clickCount > 4) {
       window.location.href = "https://en.wikipedia.org/wiki/Nazi_Germany"
     }
   }, [clickCount])
@@ -41,7 +42,9 @@ const Profile = () => {
         </div>
         <div className="">
           <h1 className={titleClasses}>bluestar</h1>
-          <h1 className={subtitleClasses}>gayware dev</h1>
+          <h1 className={subtitleClasses}>
+            <Link href="/note">gayware dev</Link>
+          </h1>
         </div>
       </div>
     </>
