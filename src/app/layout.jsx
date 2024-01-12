@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google"
 import "./styles/globals.css"
 
-const font = Inter({ subsets: ["greek"], weight: "400" })
+const font = Inter({ subsets: ["latin"], weight: "400" })
 
 export const metadata = {
   title: "bluestar",

@@ -28,7 +28,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className="flex h-fit items-center space-x-4">
+      <div className="flex items-center space-x-4">
         <div className={imageContainerClasses}>
           <Image
             onClick={handleClick}
