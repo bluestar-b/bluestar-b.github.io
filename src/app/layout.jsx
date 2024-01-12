@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google"
 import "./styles/globals.css"
 
-const inter = Inter({ subsets: ["greek"], weight: "500" })
+const font = Inter({ subsets: ["greek"], weight: "400" })
 
 export const metadata = {
   title: "bluestar",
@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className}>{children}</body>
     </html>
   )
 }
