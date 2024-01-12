@@ -1,5 +1,6 @@
+import { useState } from "react"
 import Photo from "./Photo"
-
+import Badge from "../Badge"
 const GalleryView = () => {
   const imageList = [
     "20231205_173740_1.jpg",
@@ -12,11 +13,36 @@ const GalleryView = () => {
   ]
 
   const prefix = "/gallery/"
+  const imagesPerPage = 4
+
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const startIndex = (currentPage - 1) * imagesPerPage
+  const endIndex = startIndex + imagesPerPage
+
+  const visibleImages = imageList.slice(startIndex, endIndex)
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
 
   return (
     <div>
+      <div className="mt-4 flex">
+        {[...Array(Math.ceil(imageList.length / imagesPerPage)).keys()].map(
+          (pageNumber) => (
+            <button
+              Hoverable
+              key={pageNumber + 1}
+              onClick={() => handlePageChange(pageNumber + 1)}
+            >
+              <Badge Hoverable>{pageNumber + 1}</Badge>
+            </button>
+          ),
+        )}
+      </div>
       <div className="mt-4 grid grid-cols-2 gap-4">
-        {imageList.map((filename, index) => (
+        {visibleImages.map((filename, index) => (
           <Photo key={index} src={`${prefix}${filename}`} />
         ))}
       </div>
