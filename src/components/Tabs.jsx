@@ -21,7 +21,7 @@ const Tabs = () => {
         <Tab.Panel>
           <MessageArea>
             Hello, I&apos;m Mac (aka bluestar),
-            <br />A 15 y/o space enthusiast and a non-formal student 🚀. Back in
+            <br />A 15 y/o(April 3rd, 2008) space enthusiast and a non-formal student 🚀. Back in
             2020, since I discovered what programming is and started learning
             more about it, I incredibly understood it faster. I focused on it
             too much, and this way, I&apos;ve been speedrunning the process of
