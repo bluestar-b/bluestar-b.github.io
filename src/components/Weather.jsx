@@ -1,3 +1,5 @@
+export const revalidate = 800
+
 async function getWeather() {
   const apiKey = process.env.NEXT_OWM_KEY
   const city = "Lop Buri, TH"
