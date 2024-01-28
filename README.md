@@ -1,1 +1,1 @@
-Stupid simple website, nothing special
+new remake btw
