@@ -1,7 +1,6 @@
 import {
   GithubLogo,
-  InstagramLogo,
-  TwitterLogo,
+  InstagramLogo
 } from "@phosphor-icons/react/dist/ssr"
 import Link from "next/link"
 
@@ -12,27 +11,21 @@ const Heading = () => {
         bluestar
       </div>
       <div className="flex space-x-4">
-        <Link href="https://github.com" aria-label="Github">
+        <Link href="https://github.com/bluestar-dev" aria-label="Github">
           <GithubLogo
             size={28}
             weight="bold"
             className="text-black dark:text-white"
           />
         </Link>
-        <Link href="https://instagram.com/" aria-label="Instagram">
+        <Link href="https://instagram.com/bluestar.pics" aria-label="Instagram">
           <InstagramLogo
             size={28}
             weight="bold"
             className="text-black dark:text-white"
           />
         </Link>
-        <Link href="https://x.com/" aria-label="Twitter/X">
-          <TwitterLogo
-            size={28}
-            weight="bold"
-            className="text-black dark:text-white"
-          />
-        </Link>
+       
       </div>
     </div>
   )

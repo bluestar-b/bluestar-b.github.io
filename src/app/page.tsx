@@ -1,7 +1,6 @@
 
 import Heading from "@/components/Heading";
-import Link from "next/link"
-import { ReactNode } from "react"
+import { ExternalLink } from "@/components/ExternalLink";
 
 export default function Home() {
   return (
@@ -9,7 +8,7 @@ export default function Home() {
       <div className="max-w-md md:max-w-2xl mx-auto py-12 px-6">
         <Heading />
         <div className="mb-8">
-          Hello, I&apos;m Mac (aka bluestar),
+          Hello, I&apos;m Mac (aka bluestar)
           <br />A 15 y/o(April 3rd, 2008) space enthusiast and a non-formal
           student 🚀. Back in 2020, since I discovered what programming is and
           started learning more about it, I incredibly understood it faster. I
@@ -34,17 +33,4 @@ export default function Home() {
   )
 }
 
-interface ExternalLinkProps {
-  children: ReactNode
-  href: string
-}
 
-const ExternalLink = ({ children, href }: ExternalLinkProps) => {
-  return (
-    <Link href={href || ""} as={href || ""}>
-      <p className="ml-1 mr-1 inline-flex items-center rounded p-1 underline leading-4 text-black dark:text-white">
-        {children}
-      </p>
-    </Link>
-  )
-}
