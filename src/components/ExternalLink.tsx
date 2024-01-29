@@ -1,5 +1,5 @@
-import { ExternalLinkProps } from "@/lib/interfaces";
-import Link from "next/link";
+import { ExternalLinkProps } from "@/lib/interfaces"
+import Link from "next/link"
 
 export function ExternalLink({ children, href }: ExternalLinkProps) {
   return (
@@ -8,5 +8,5 @@ export function ExternalLink({ children, href }: ExternalLinkProps) {
         {children}
       </p>
     </Link>
-  );
+  )
 }

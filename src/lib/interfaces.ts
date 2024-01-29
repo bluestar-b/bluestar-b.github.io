@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode } from "react"
 
 export interface ExternalLinkProps {
-  children: ReactNode;
-  href: string;
+  children: ReactNode
+  href: string
 }
