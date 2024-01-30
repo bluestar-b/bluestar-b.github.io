@@ -10,10 +10,8 @@ export default function Home() {
         <Heading />
         <div className="mb-8">
           I joined the world on April 3rd, 2008, and became a space enthusiast,
-          studying in a non-formal setting because life is crazy to me 🧨. I
-          started learning things in 2020 and began applying them in 2021, and
-          I&apos;m still soaring through the zero gravity of life. How about
-          you?
+          studying in a non-formal education because life is crazy to me 🧨. I
+          started learning things in 2020 and began applying them in 2021.
           <div className="mb-4 mt-1">
             <div className="text-base font-light italic leading-relaxed text-pink-600 dark:text-pink-300">
               &quot;Life is boring, but life still has colors to explore. Find a
