@@ -4,8 +4,8 @@
 
 :root {
   --background-color-dark: rgb(0, 0, 0);
-  --text-color-dark: rgb(253, 253, 253);
-  --background-color-light: #f2f2f2;
+  --text-color-dark: rgb(255, 255, 255);
+  --background-color-light: #d2d2d2;
   --text-color-light: rgb(17, 19, 25);
 }
 
