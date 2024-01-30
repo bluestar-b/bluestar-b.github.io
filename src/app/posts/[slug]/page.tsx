@@ -17,13 +17,13 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   return (
     <article className="mx-auto max-w-xl py-8">
       <div className="mb-8 text-center">
-        <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
+        <time dateTime={post.date} className="mb-1 text-xs">
           {format(parseISO(post.date), "LLLL d, yyyy")}
         </time>
         <h1 className="text-3xl font-bold">{post.title}</h1>
       </div>
       <div
-        className="[&>*]:mb-3 [&>*:last-child]:mb-0"
+        className="prose p-4 lg:prose-md prose-neutral dark:prose-invert prose-pre:border prose-pre:bg-zinc-200 prose-pre:text-gray-800 dark:prose-pre:border-gray-700 dark:prose-pre:text-gray-200 dark:prose-pre:bg-zinc-900 rounded-lg"
         dangerouslySetInnerHTML={{ __html: post.body.html }}
       />
     </article>
