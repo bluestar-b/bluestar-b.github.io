@@ -8,7 +8,7 @@ import { PostListLn } from "@/components/PostListLn"
 export default function Home() {
   const posts = allPosts
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
-    .slice(0, 10)
+    .slice(0, 16)
 
   return (
     <main>
@@ -19,7 +19,7 @@ export default function Home() {
           studying in a non-formal education because life is crazy to me 🧨. I
           started learning things in 2020 and began applying them in 2021.
           <div className="mb-4 mt-1">
-            <div className="text-base font-light italic leading-relaxed text-gray-600 dark:text-gray-300">
+            <div className="text-base font-light italic leading-relaxed text-gray-600 dark:text-gray-200">
               &quot;Life is boring, but life still has colors to explore. Find a
               new color or make that color yourself.&quot;
             </div>
