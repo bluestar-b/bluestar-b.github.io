@@ -1,9 +1,13 @@
 import Heading from "@/components/Heading"
 import FavoriteMusicList from "@/components/FavoriteMusicList"
-import Link from "next/link"
+import Image from "next/image"
 import { compareDesc } from "date-fns"
-import { allPosts, Post } from "contentlayer/generated"
+import { allPosts } from "contentlayer/generated"
 import { PostListLn } from "@/components/PostListLn"
+import sunset from "../../public/images/sunset.jpg"
+import road from "../../public/images/road.jpeg"
+import lookingup from "../../public/images/looking_up.jpeg"
+import Photo from "@/components/Photo"
 
 export default function Home() {
   const posts = allPosts
@@ -12,9 +16,9 @@ export default function Home() {
 
   return (
     <main>
-      <div className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 p-3">
+      <div className="flex-auto min-w-0 mt-6 flex flex-col p-3">
         <Heading />
-        <div className="mb-8">
+        <div className="mb-2">
           I joined the world on April 3rd, 2008, and became a space enthusiast,
           studying in a non-formal education because life is crazy to me 🧨. I
           started learning things in 2020 and began applying them in 2021.
@@ -26,6 +30,8 @@ export default function Home() {
             - 2023
           </div>
         </div>
+        <Photo />
+
         <div>
           <h2 className="text-2xl font-semibold mb-2">Favorite song</h2>
           <FavoriteMusicList />
