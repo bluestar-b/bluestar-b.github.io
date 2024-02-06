@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      <div className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 p-3">
         <Heading />
         <div className="mb-8">
           I joined the world on April 3rd, 2008, and became a space enthusiast,

@@ -10,7 +10,7 @@
 }
 
 ._prose {
-  @apply prose prose-zinc dark:prose-invert
+  @apply prose prose-zinc dark:prose-invert;
 }
 
 @media (prefers-color-scheme: dark) {
