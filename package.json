@@ -10,7 +10,6 @@
     "fmt": "prettier --write ."
   },
   "dependencies": {
-    "@phosphor-icons/react": "^2.0.15",
     "contentlayer": "^0.3.4",
     "date-fns": "^3.3.1",
     "next": "14.0.4",

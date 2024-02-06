@@ -9,6 +9,10 @@
   --text-color-light: rgb(17, 19, 25);
 }
 
+._prose {
+  @apply prose prose-zinc dark:prose-invert
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: var(--background-color-dark);

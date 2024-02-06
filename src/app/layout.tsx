@@ -16,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${inter.className} antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-6 mt-8 lg:mx-auto`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
