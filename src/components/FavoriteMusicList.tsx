@@ -32,7 +32,7 @@ const FavoriteMusicList = () => {
           key={index}
         >
           <div>
-            <div className="text-md hover:text-zinc-700 dark:hover:text-zinc-300">
+            <div className="text-md">
               <span>{music.artist}</span> -{" "}
               <Link className="hover:underline" href={music.link}>
                 {music.title}
