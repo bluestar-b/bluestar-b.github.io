@@ -1,0 +1,28 @@
+---
+title: king narai the great fair
+date: 2024-2-10
+---
+
+# king narai the great fair gallery
+
+
+The King Narai the Great Fair is an annual event held in Lopburi, Thailand, to celebrate the life and reign of King Narai the Great, one of the most revered monarchs in Thai history. The fair typically takes place in February and lasts for 10 days.
+
+## Wat Phrasi Rattana Mahathat
+[Google map](https://maps.app.goo.gl/AjNLSPVydwEJbbEC7)
+![Wat Phrasi Rattana Mahathat/วัดพระศรีรัตนมหาธาตุ ลพบุรี](https://static.notmycode.dev/mac.notmycode.dev/king-narai-the-great-fair/1000003480-01.jpeg)
+
+![Wat Phrasi Rattana Mahathat/วัดพระศรีรัตนมหาธาตุ ลพบุรี](https://static.notmycode.dev/mac.notmycode.dev/king-narai-the-great-fair/1000003482-01.jpeg) 
+
+![Wat Phrasi Rattana Mahathat/วัดพระศรีรัตนมหาธาตุ ลพบุรี](https://static.notmycode.dev/mac.notmycode.dev/king-narai-the-great-fair/1000003488-01.jpeg) 
+
+
+## Suan Rachanusorn
+[Google map](https://maps.app.goo.gl/LK6r5Sq94QefdudE7)
+![Suan Rachanusorn/สวนราชานุสรณ์](https://static.notmycode.dev/mac.notmycode.dev/king-narai-the-great-fair/1000003505-01.jpeg) 
+
+![Suan Rachanusorn/สวนราชานุสรณ์](https://static.notmycode.dev/mac.notmycode.dev/king-narai-the-great-fair/1000003509-01.jpeg) 
+
+
+ 
+Sorry that I don't have many good photos at [King Narai's Palace](https://maps.app.goo.gl/uiHXvJUdvJmRpF1V8) because there were a lot of people, and it was busier than expected
