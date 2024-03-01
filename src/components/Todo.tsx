@@ -8,8 +8,8 @@ interface TodoCardProps {
 const TodoCard = ({ title, date }: TodoCardProps) => {
   return (
     <div>
-      <span>
-        {title} {formatTimeAgo(date)}
+      <span className="text-md">
+        {title} - {formatTimeAgo(date)}
       </span>
     </div>
   )
