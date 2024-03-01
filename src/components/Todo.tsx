@@ -1,11 +1,11 @@
 import { formatTimeAgo } from "@/lib/time"
 
-interface TodoCardProps {
+interface TodoProps {
   title: string
   date: string
 }
 
-const TodoCard = ({ title, date }: TodoCardProps) => {
+const Todo = ({ title, date }: TodoProps) => {
   return (
     <div>
       <span className="text-md">
@@ -15,4 +15,4 @@ const TodoCard = ({ title, date }: TodoCardProps) => {
   )
 }
 
-export default TodoCard
+export default Todo

@@ -4,7 +4,8 @@ import { compareDesc } from "date-fns"
 import { allPosts } from "contentlayer/generated"
 import { PostListLn } from "@/components/PostListLn"
 import Photo from "@/components/Photo"
-import TodoCard from "@/components/Todo"
+import Todo from "@/components/Todo"
+import TodoList from "@/components/TodoList"
 
 export default function Home() {
   const posts = allPosts
@@ -36,10 +37,7 @@ export default function Home() {
 
         <div>
           <h2 className="text-2xl font-semibold mb-2">Todos</h2>
-
-          <TodoCard title="Trip from Lopburi to Chonburi." date="2024/02/29 06:00:00" />
-          <TodoCard title="Exam #1" date="2024/03/02 06:00:00" />
-          <TodoCard title="Exam #2" date="2024/03/03 06:00:00" />
+          <TodoList />
         </div>
 
         <div className="mt-1 min-w-full overflow-hidden overflow-ellipsis">
