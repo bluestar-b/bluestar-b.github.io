@@ -1,12 +1,8 @@
 import Heading from "@/components/Heading"
 import FavoriteMusicList from "@/components/FavoriteMusicList"
-import Image from "next/image"
 import { compareDesc } from "date-fns"
 import { allPosts } from "contentlayer/generated"
 import { PostListLn } from "@/components/PostListLn"
-import sunset from "../../public/images/sunset.jpg"
-import road from "../../public/images/road.jpeg"
-import lookingup from "../../public/images/looking_up.jpeg"
 import Photo from "@/components/Photo"
 
 export default function Home() {
