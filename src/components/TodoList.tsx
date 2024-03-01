@@ -48,7 +48,6 @@ const TodoList = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-2">Todos</h2>
       {todos.slice(0, visibleLabels).map((todo, index) => (
         <Todo key={index} title={todo.title} date={todo.date} />
       ))}
