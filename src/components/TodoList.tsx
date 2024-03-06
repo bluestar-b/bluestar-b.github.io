@@ -12,7 +12,7 @@ const TodoList = () => {
       date: "2023/06/26 00:00:00",
     },
     {
-      title: "Scout Promise Review Ceremony / Playground",
+      title: "Scout Promise Review Ceremony",
       date: "2023/07/01 00:00:00",
     },
     { title: "Study trip to Phetchaburi", date: "2023/07/22 00:00:00" },
