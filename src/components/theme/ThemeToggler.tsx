@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
+import { TbMoon, TbSun } from "react-icons/tb"
+import { Button } from "@radix-ui/themes"
 
 const ThemeToggler = () => {
   const [mounted, setMounted] = useState(false)
@@ -21,7 +23,9 @@ const ThemeToggler = () => {
 
   return (
     <div>
-      <button onClick={toggleTheme}>{theme === "light" ? "🌙" : "☀️"}</button>
+      <button className="w-7 h-7 text-md" onClick={toggleTheme}>
+        {theme === "light" ? <TbMoon /> : <TbSun />}
+      </button>
     </div>
   )
 }

@@ -5,7 +5,6 @@ import { allPosts } from "contentlayer/generated"
 import { PostListLn } from "@/components/PostListLn"
 import Photo from "@/components/Photo"
 import TodoList from "@/components/TodoList"
-import ThemeToggler from "@/components/theme/ThemeToggler"
 
 export default function Home() {
   const posts = allPosts
@@ -14,8 +13,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="flex-auto min-w-0 mt-6 flex flex-col p-3">
-        <ThemeToggler />
+      <div className=" mt-6 flex flex-col p-4">
         <Heading />
         <div className="mb-2">
           I joined the world on April 3rd, 2008, and became a space enthusiast,

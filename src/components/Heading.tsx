@@ -1,9 +1,17 @@
+import ThemeToggler from "./theme/ThemeToggler"
 const Heading = () => {
   return (
-    <div className="flex flex-col md:flex-row md:justify-between items-center mb-4">
-      <div className="text-3xl font-bold">
-        bluestar
+    <div className="flex items-center justify-between py-4">
+      <div>
+        <div className="text-lg  font-bold">bluestar</div>
         <div className="text-sm">I create bugs🤯</div>
+      </div>
+      <div className="flex items-center">
+        <div className="inline">
+          <div>
+            <ThemeToggler />
+          </div>
+        </div>
       </div>
     </div>
   )
