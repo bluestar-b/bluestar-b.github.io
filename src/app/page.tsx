@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className=" mt-6 flex flex-col p-4">
+      <div className=" mt-6 flex flex-col p-3">
         <Heading />
         <div className="mb-2">
           I joined the world on April 3rd, 2008, and became a space enthusiast,
