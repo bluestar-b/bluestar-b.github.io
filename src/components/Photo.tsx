@@ -16,7 +16,7 @@ const Photo = () => {
             alt={image.alt}
             quality={50}
             fill
-            className="object-cover rounded-lg transition-opacity dark:opacity-70 hover:opacity-100"
+            className="object-cover rounded-lg transition-opacity"
           />
         </div>
       ))}
