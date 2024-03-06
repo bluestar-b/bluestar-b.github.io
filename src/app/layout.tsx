@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-auto`}
       >
-        <ThemeProvider attribute="class" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="system">
           <Theme>{children}</Theme>
         </ThemeProvider>
       </body>
