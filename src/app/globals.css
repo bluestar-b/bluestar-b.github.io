@@ -7,6 +7,7 @@
   --text-color-dark: rgb(255, 255, 255);
   --background-color-light: #d2d2d2;
   --text-color-light: rgb(17, 19, 25);
+  --link-text-color: #df62a0;
 }
 
 ._prose {
@@ -25,9 +26,4 @@
     background-color: var(--background-color-light);
     color: var(--text-color-light);
   }
-}
-
-a {
-  color: #df62a0;
-  text-decoration: none;
 }

@@ -34,7 +34,7 @@ const FavoriteMusicList = () => {
           <div>
             <div className="text-md">
               <span>{music.artist}</span> -{" "}
-              <Link className="hover:underline" href={music.link}>
+              <Link className="hover:underline text-[color:var(--link-text-color)]" href={music.link}>
                 {music.title}
               </Link>
             </div>
