@@ -1,12 +1,15 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import "@radix-ui/themes/styles.css"
+import { Theme } from "@radix-ui/themes"
+import ThemeProvider from "@/components/theme/ThemeProvider"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "bluestar",
-  description: "It works",
+  description: "nothing is impossible🚀",
 }
 
 export default function RootLayout({
@@ -19,7 +22,9 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-auto`}
       >
-        {children}
+        <ThemeProvider attribute="class" enableSystem>
+          <Theme>{children}</Theme>
+        </ThemeProvider>
       </body>
     </html>
   )
