@@ -46,7 +46,6 @@ const TodoList = () => {
     setVisibleLabels((prev) => prev + 5)
   }
 
-  
   return (
     <div>
       {todos.slice(0, visibleLabels).map((todo, index) => (
