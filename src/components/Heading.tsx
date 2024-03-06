@@ -12,15 +12,16 @@ const Heading = () => {
         <div className="space-x-3">
           <div className="inline-block">
             <Link href="https://github.com/bluestar-b/" aria-label="Github">
-            <GithubLogo size={20} />
+              <GithubLogo size={20} />
             </Link>
-            
           </div>
           <div className="inline-block">
-            <Link href="https://instagram.com/bluestar.pics" aria-label="Instagram">
-            <InstagramLogo size={20} />
+            <Link
+              href="https://instagram.com/bluestar.pics"
+              aria-label="Instagram"
+            >
+              <InstagramLogo size={20} />
             </Link>
-            
           </div>
           <div className="inline-block">
             <ThemeToggler />
