@@ -7,8 +7,7 @@ import Photo from "@/components/Photo"
 import TodoList from "@/components/TodoList"
 import { JetBrains_Mono } from "next/font/google"
 
-
-const JetNoBrains = JetBrains_Mono({ subsets: ['latin'] })
+const JetNoBrains = JetBrains_Mono({ subsets: ["latin"] })
 
 export default function Home() {
   const posts = allPosts
