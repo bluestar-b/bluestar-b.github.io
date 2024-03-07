@@ -6,9 +6,9 @@ import { PostListLn } from "@/components/PostListLn"
 import Photo from "@/components/Photo"
 import TodoList from "@/components/TodoList"
 import { JetBrains_Mono } from "next/font/google"
-import Where from "@/components/Where"
 
-const JetNoBrains = JetBrains_Mono()
+
+const JetNoBrains = JetBrains_Mono({ subsets: ['latin'] })
 
 export default function Home() {
   const posts = allPosts
