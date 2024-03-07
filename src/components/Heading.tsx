@@ -1,12 +1,16 @@
 import { GithubLogo, InstagramLogo } from "@phosphor-icons/react/dist/ssr"
 import ThemeToggler from "./theme/ThemeToggler"
 import Link from "next/link"
+import Where from "./Where"
+
 const Heading = () => {
   return (
     <div className="flex items-center justify-between py-4">
       <div>
-        <div className="text-lg  font-bold">bluestar</div>
-        <div className="text-sm">I create bugs🤯</div>
+        <div className="text-xl font-bold">bluestar</div>
+        <Where />
+        {/* 
+        <div className="text-sm">I created bugs🤯</div>*/}
       </div>
       <div className="flex items-center">
         <div className="space-x-3">

@@ -11,6 +11,9 @@ dependencies:
   "@radix-ui/themes":
     specifier: ^2.0.3
     version: 2.0.3(@types/react-dom@18.2.18)(@types/react@18.2.47)(react-dom@18.2.0)(react@18.2.0)
+  "@upstash/redis":
+    specifier: ^1.28.4
+    version: 1.28.4
   contentlayer:
     specifier: ^0.3.4
     version: 0.3.4(esbuild@0.20.0)
@@ -2867,6 +2870,15 @@ packages:
       }
     dev: true
 
+  /@upstash/redis@1.28.4:
+    resolution:
+      {
+        integrity: sha512-UalkSAny/dz1m8giEhD3Y5ru1o+CPHI32wFyS3MyzDzj2TRvEN+lTw+mPwi20ojk0H2gs8TBW3qsrvwuLLy+pA==,
+      }
+    dependencies:
+      crypto-js: 4.2.0
+    dev: false
+
   /acorn-jsx@5.3.2(acorn@8.11.3):
     resolution:
       {
@@ -3495,6 +3507,13 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /crypto-js@4.2.0:
+    resolution:
+      {
+        integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==,
+      }
+    dev: false
 
   /cssesc@3.0.0:
     resolution:
