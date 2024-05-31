@@ -10,7 +10,139 @@ TimeAgo.addDefaultLocale(en)
 
 const timeAgo = new TimeAgo("en-US")
 
+
+import metadata from "/metadata.json";
+import Fuse from "fuse.js";
+
+const list = Object.entries(metadata).map(([key, item]) => ({
+  key,
+  ...item,
+  tags: Array.isArray(item.tags) ? item.tags.join(" ") : "",
+}));
+
+const options = {
+  includeScore: true,
+  keys: ["tags", "title", "author"],
+};
+
+const fuse = new Fuse(list, options);
+
+// Function to render search results
+function renderResults(results) {
+  const resultsContainer = document.getElementById("articles");
+  resultsContainer.innerHTML = "";
+
+  if (results.length === 0) {
+    resultsContainer.innerHTML = "<p>No results found</p>";
+    return;
+  }
+
+  results.forEach((result) => {
+    const item = result.item;
+    const div = document.createElement("div");
+    div.classList.add("result-item");
+    div.innerHTML = `
+      <div>
+        <a href="/blog/${item.key}">${item.title}</a>
+      </div>
+    `;
+    resultsContainer.appendChild(div);
+  });
+}
+
+// Function to update HTML with original articles
+function updateHtml() {
+  try {
+    const articlesDiv = document.getElementById("articles");
+    articlesDiv.innerHTML = "";
+    for (const key in metadata) {
+      const article = metadata[key];
+      const tags = article.tags.map((tag) => `<li>${tag}</li>`).join("");
+      const articleHtml = `
+        <div>
+          <a href="/blog/${key}">${article.title}</a>
+        </div>
+      `;
+      articlesDiv.insertAdjacentHTML("beforeend", articleHtml);
+    }
+
+    console.log("Articles updated in the browser.");
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
+
+// Initial update of HTML with original articles
+updateHtml();
+
+// Search box event listener
+const searchBox = document.getElementById("searchBox");
+searchBox.addEventListener("input", (e) => {
+  const query = e.target.value;
+  if (query.trim() === "") {
+    updateHtml();
+  } else {
+    const results = fuse.search(query);
+    renderResults(results);
+  }
+});
+
+
+
+
+
+/*
 import metadata from "/metadata.json"
+
+import Fuse from "fuse.js";
+
+
+const list = Object.entries(metadata).map(([key, item]) => ({
+  key,
+  ...item,
+  tags: Array.isArray(item.tags) ? item.tags.join(" ") : "",
+}));
+
+const options = {
+  includeScore: true,
+  keys: ["tags", "title", "author"],
+};
+
+const fuse = new Fuse(list, options);
+
+// Function to render search results
+function renderResults(results) {
+  const resultsContainer = document.getElementById("articles");
+  resultsContainer.innerHTML = "";
+
+  if (results.length === 0) {
+    resultsContainer.innerHTML = "<p>No results found</p>";
+    return;
+  }
+
+  results.forEach((result) => {
+    const item = result.item;
+    const div = document.createElement("div");
+    div.classList.add("result-item");
+    div.innerHTML = `
+<div>
+          <a href="/blog/${item.key}">${item.title}</a>
+        </div>
+
+	  `;
+    resultsContainer.appendChild(div);
+  });
+}
+
+// Search box event listener
+const searchBox = document.getElementById("searchBox");
+searchBox.addEventListener("input", (e) => {
+  const query = e.target.value;
+  const results = fuse.search(query);
+  renderResults(results);
+});
+
+
 
 function updateHtml() {
   try {
@@ -37,6 +169,11 @@ function updateHtml() {
 }
 
 updateHtml()
+
+
+*/
+
+
 
 function TodoList() {
   let visibleLabels = 5
