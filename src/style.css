@@ -12,6 +12,10 @@ a:hover {
   --link-text-color: #eeb9da;
 }
 
+a {
+  color: var(--link-text-color);
+}
+
 body {
   font-family: sans-serif;
   font-weight: 400;

@@ -45,6 +45,7 @@ fs.readdir(contentsDir, async (err, files) => {
     const str = fs.readFileSync(filePath, "utf8")
     const { data } = matter(str)
 
+    console.log(data.tags)
     const baseFilename = path.basename(file, path.extname(file))
     metadata[baseFilename] = data
   }
@@ -68,11 +69,15 @@ fs.readdir(contentsDir, async (err, files) => {
 
 </head>
 
-<body class="prose md:prose-lg lg:prose-xl p-4 prose-invert prose-neutral mx-auto h-screen prose-img:rounded-xl prose-video:rounded-md">
+<body class="prose md:prose-lg lg:prose-xl p-4 prose-invert prose-neutral mx-auto h-screen prose-img:rounded-xl prose-video:rounded-lg">
 <h2 class="text-center">${data.title}</h1>
 <div id="info" class="text-xs"></div>
 
 
+<div id="tags" clsss="not-prose inline-flex">
+<p class="inline-flex text-xs font-medium">Tags:</p>
+
+</div>
 </body>
 </html>
 
@@ -100,6 +105,16 @@ fs.readdir(contentsDir, async (err, files) => {
 
       document.head.appendChild(document.createTextNode("\n"))
     }
+
+    const container = document.getElementById("tags")
+
+    container.innerHTML += data.tags
+      .map(
+        (tag, index) => `
+    <a class="inline-flex items-center text-sm text-[color:var(--link-text-color)]">${tag}${index < data.tags.length - 1 ? ", " : ""}</a>
+`,
+      )
+      .join("")
 
     setMetaTag("og:title", data.title)
     setMetaTag("og:type", "website")

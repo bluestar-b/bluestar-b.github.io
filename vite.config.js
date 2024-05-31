@@ -4,6 +4,10 @@ import { run } from "vite-plugin-run"
 import fs from "fs"
 import path from "path"
 
+import * as child from "child_process"
+
+const commitHash = child.execSync("git rev-parse --short HEAD").toString()
+
 function getHtmlEntries(paths) {
   const entries = {}
 
@@ -26,6 +30,9 @@ function getHtmlEntries(paths) {
 }
 
 export default defineConfig({
+  define: {
+    __COMMIT_HASH__: JSON.stringify(commitHash),
+  },
   plugins: [
     run([
       {

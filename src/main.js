@@ -10,6 +10,34 @@ TimeAgo.addDefaultLocale(en)
 
 const timeAgo = new TimeAgo("en-US")
 
+import metadata from "/metadata.json"
+
+function updateHtml() {
+  try {
+    const articlesDiv = document.getElementById("articles")
+    articlesDiv.innerHTML = ""
+    for (const key in metadata) {
+      const article = metadata[key]
+      const tags = article.tags.map((tag) => `<li>${tag}</li>`).join("")
+      const articleHtml = `
+        <div>
+          <a href="/blog/${key}">${article.title}</a>
+        </div>
+      `
+      articlesDiv.insertAdjacentHTML("beforeend", articleHtml)
+
+      const path = `/blog/${key}`
+      console.log("Path:", path)
+    }
+
+    console.log("Articles updated in the browser.")
+  } catch (err) {
+    console.error("Error:", err)
+  }
+}
+
+updateHtml()
+
 function TodoList() {
   let visibleLabels = 5
 
