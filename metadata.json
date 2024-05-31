@@ -4,21 +4,13 @@
     "title": "How i die by rust",
     "author": "bluestar",
     "desc": "<3",
-    "tags": [
-      "test1",
-      "test2",
-      "OwO"
-    ]
+    "tags": ["test1", "test2", "OwO"]
   },
   "hello1": {
     "date": "2024-04-04T00:00:00.000Z",
     "title": "Test",
     "author": "bluestar",
     "desc": "<3",
-    "tags": [
-      "UwU",
-      "hell no",
-      "OwO"
-    ]
+    "tags": ["UwU", "hell no", "OwO"]
   }
 }
