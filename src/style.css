@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #212529;
+  --text-color: #fcf2f7;
+  --link-text-color: #e38ac2;
+}
+
+a:hover {
+  --link-text-color: #eeb9da;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

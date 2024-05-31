@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hello world</title>
+  </head>
+  <body>
+    <div id="app" class="container mx-auto px-4">
+      <div class="mt-6 flex flex-col p-3">
+        <div class="flex items-center justify-between py-4">
+          <div>
+            <div class="text-xl font-bold">bluestar</div>
+            <div class="text-sm">I created bugs🤯</div>
+          </div>
+          <div class="flex items-center">
+            <div class="space-x-3">
+              <div class="inline-block">
+                <a href="https://github.com/bluestar-b/" aria-label="Github">
+                  <!-- GithubLogo component -->
+                </a>
+              </div>
+              <div class="inline-block">
+                <a
+                  href="https://instagram.com/bluestar.pics"
+                  aria-label="Instagram"
+                >
+                  <!-- InstagramLogo component -->
+                </a>
+              </div>
+              <div class="inline-block">
+                <!-- DropdownMenu component -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+      <div class="inline-block">
+        <span class="bg-[#a91271] text-[#f0b2d1] text-sm font-medium px-2.5 py-0.5 rounded w-fit">he/him</span>
+        <span class="bg-[#a91271] text-[#f0b2d1] text-sm font-medium px-2.5 py-0.5 rounded w-fit">she/her</span>
+
+      </div>
+      -->
+      <div class="mb-2">
+        I joined the world on April 3rd, 2008, and became a space enthusiast,
+        studying in a non-formal education because life is crazy to me 🧨. I
+        started learning things in 2020 and began applying them in 2021.
+        <div class="mb-4 mt-1">
+          <blockquote class="relative mt-4">
+            <div class="relative z-10">
+              <p class="text-md">
+                <em class="relative">
+                  <span class="relative z-10"
+                    >Life is boring, but life still has colors to explore. Find
+                    a new color or make that color yourself.</span
+                  >
+                </em>
+              </p>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Favorite song</h2>
+        <div class="justify-center">
+          <div class="mt-1 min-w-full overflow-hidden overflow-ellipsis">
+            <div>
+              <div class="text-md">
+                <span>Orangestar</span> -
+                <a
+                  class="hover:underline text-[color:var(--link-text-color)]"
+                  href="https://youtu.be/XogSflwXgpw"
+                  >Asu no Yozora Shoukaihan</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="mt-1 min-w-full overflow-hidden overflow-ellipsis">
+            <div>
+              <div class="text-md">
+                <span>Orangestar</span> -
+                <a
+                  class="hover:underline text-[color:var(--link-text-color)]"
+                  href="https://youtu.be/S6_zybtKN5k"
+                  >Natsuiro Answer</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="mt-1 min-w-full overflow-hidden overflow-ellipsis">
+            <div>
+              <div class="text-md">
+                <span>Orangestar</span> -
+                <a
+                  class="hover:underline text-[color:var(--link-text-color)]"
+                  href="https://youtu.be/xzoShzMIlIM"
+                  >Kuusou Ressha</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="mt-1 min-w-full overflow-hidden overflow-ellipsis">
+            <div>
+              <div class="text-md">
+                <span>Linkin Park</span> -
+                <a
+                  class="hover:underline text-[color:var(--link-text-color)]"
+                  href="https://youtu.be/8sgycukafqQ"
+                  >What I've done</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold mb-2">Todos</h2>
+        <div id="todoList"></div>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-2">Random photo</h2>
+      <div class="w-full text-center">
+        <div class="relative overflow-hidden">
+          <img
+            id="randomImage"
+            class="object-cover rounded-xl transition-opacity"
+          />
+        </div>
+        <div id="photoInfo" class="p-2 font-semibold"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
