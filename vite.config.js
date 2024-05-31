@@ -4,6 +4,8 @@ import { run } from "vite-plugin-run"
 import fs from "fs"
 import path from "path"
 
+
+
 function getHtmlEntries(paths) {
   const entries = {}
 

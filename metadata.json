@@ -1,24 +1,14 @@
 {
   "hello": {
     "date": "2024-04-04T00:00:00.000Z",
-    "title": "How i die by rust",
+    "title": "Test article",
     "author": "bluestar",
     "desc": "<3",
     "tags": [
-      "test1",
-      "test2",
-      "OwO"
-    ]
-  },
-  "hello1": {
-    "date": "2024-04-04T00:00:00.000Z",
-    "title": "Test",
-    "author": "bluestar",
-    "desc": "<3",
-    "tags": [
-      "UwU",
-      "hell no",
-      "OwO"
+      "the",
+      "begging",
+      "of",
+      "something"
     ]
   }
 }

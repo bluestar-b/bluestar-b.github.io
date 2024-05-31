@@ -1,12 +1,13 @@
 ---
 date: 2024-04-04 00:00:00
-title: How i die by rust
+title: Test article
 author: bluestar
 desc: "<3"
 tags:
-  - test1
-  - test2
-  - OwO
+  - the
+  - begging
+  - of
+  - something
 ---
 
 # h1
