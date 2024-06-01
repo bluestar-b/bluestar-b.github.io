@@ -10,6 +10,21 @@ tags:
   - something
 ---
 
+
+A test article for the entire blog included features like code highlighting.
+
+How is this possible almost from scratch?
+- Gray matter
+- Marked.js
+- Marked plugin Highlight.js
+- Vite.js custom config
+- Tailwind CSS plugin typography
+
+
+
+*“If you wish to make an apple pie from scratch, you must first invent the universe” - Carl Sagan*
+
+
 # h1
 
 ## h2
