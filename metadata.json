@@ -1,4 +1,15 @@
 {
+  "CFT_1": {
+    "date": "2024-06-01T00:00:00.000Z",
+    "title": "Boeing Crewed Flight Test(CFT-1)",
+    "author": "bluestar",
+    "desc": "An summary information about Boeing Crewed Flight Test 1(CFT-1)",
+    "tags": [
+      "space",
+      "boeing",
+      "starliner"
+    ]
+  },
   "hello": {
     "date": "2024-04-04T00:00:00.000Z",
     "title": "Test article",

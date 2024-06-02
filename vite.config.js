@@ -1,5 +1,6 @@
 import { defineConfig } from "vite"
 import { run } from "vite-plugin-run"
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 import fs from "fs"
 import path from "path"
@@ -25,8 +26,28 @@ function getHtmlEntries(paths) {
   return entries
 }
 
+
+const DEFAULT_OPTIONS = {
+  test: /\.(jpe?g|png|webp)$/i,
+  exclude: undefined,
+  include: undefined,
+  includePublic: true,
+  logStats: true,
+  ansiColors: true,
+  png: {
+    quality: 50,
+  },
+  jpeg: {
+    quality: 50,
+  },
+};
+
+
 export default defineConfig({
   plugins: [
+
+ViteImageOptimizer(DEFAULT_OPTIONS),
+	
     run([
       {
         name: "Render blog",
