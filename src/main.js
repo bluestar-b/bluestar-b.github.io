@@ -73,10 +73,8 @@ function updateHtml() {
   }
 }
 
-// Initial update of HTML with original articles
 updateHtml()
 
-// Search box event listener
 const searchBox = document.getElementById("searchBox")
 searchBox.addEventListener("input", (e) => {
   const query = e.target.value
@@ -85,6 +83,42 @@ searchBox.addEventListener("input", (e) => {
   } else {
     const results = fuse.search(query)
     renderResults(results)
+  }
+})
+
+const dropdownButton = document.getElementById("dropdown-button")
+const dropdownMenu = document.getElementById("dropdown-menu")
+let isDropdownOpen = false
+
+function toggleDropdown() {
+  isDropdownOpen = !isDropdownOpen
+  if (isDropdownOpen) {
+    dropdownMenu.classList.remove("hidden", "fade-out")
+    dropdownMenu.classList.add("fade-in")
+  } else {
+    dropdownMenu.classList.remove("fade-in")
+    dropdownMenu.classList.add("fade-out")
+    setTimeout(() => {
+      dropdownMenu.classList.add("hidden")
+    }, 500) // match the duration of the fade-out animation
+  }
+}
+
+dropdownButton.addEventListener("click", toggleDropdown)
+
+window.addEventListener("click", (event) => {
+  if (
+    !dropdownButton.contains(event.target) &&
+    !dropdownMenu.contains(event.target)
+  ) {
+    if (isDropdownOpen) {
+      dropdownMenu.classList.remove("fade-in")
+      dropdownMenu.classList.add("fade-out")
+      setTimeout(() => {
+        dropdownMenu.classList.add("hidden")
+        isDropdownOpen = false
+      }, 500)
+    }
   }
 })
 

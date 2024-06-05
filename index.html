@@ -7,14 +7,60 @@
     <title>hello world</title>
   </head>
   <body>
-    <div id="app" class="container mx-auto px-4 max-w-md md:max-w-2xl mx-auto">
+    <div id="app" class="container mx-auto max-w-md px-4 md:max-w-2xl">
       <div class="mt-6 flex flex-col p-3">
         <div class="flex items-center justify-between py-4">
           <div>
             <div class="text-xl font-bold">bluestar</div>
             <div class="text-sm">I created bugs🤯</div>
           </div>
-          <div class="text-xl font-bold">abc</div>
+          <div class="text-xl font-bold">
+            <div class="relative inline-block text-left">
+              <button id="dropdown-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="#FFFFFF"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                id="dropdown-menu"
+                class="absolute right-0 hidden w-40 origin-top-right rounded-md bg-[#212529] bg-[#424649] font-medium shadow-lg ring-1 ring-[#D6D7DC] ring-opacity-80"
+              >
+                <div
+                  class="p-2 py-2"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="dropdown-button"
+                >
+                  <a
+                    href="#"
+                    class="mb-1 block rounded-md px-2 py-1 text-sm hover:bg-[#4d5154]"
+                    role="menuitem"
+                    >Github</a
+                  >
+                  <a
+                    href="#"
+                    class="mb-1 block rounded-md px-2 py-1 text-sm hover:bg-[#4d5154]"
+                    role="menuitem"
+                    >Discord</a
+                  >
+                  <a
+                    href="#"
+                    class="mb-1 block rounded-md px-2 py-1 text-sm hover:bg-[#4d5154]"
+                    role="menuitem"
+                    >Instagram</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="mb-2">
@@ -70,4 +116,3 @@
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-
