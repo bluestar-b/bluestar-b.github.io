@@ -52,6 +52,43 @@ function renderResults(results) {
   })
 }
 
+async function getCoords() {
+  const response = await fetch("https://ipapi.co/json/")
+  const data = await response.json()
+  return { latitude: data.latitude, longitude: data.longitude }
+}
+
+/*
+    Calculate the great circle distance between two points
+    on the Earth's surface given their latitude and longitude
+    in degrees.
+    
+    */
+function haversine(lat1, lon1, lat2, lon2) {
+  let dLat = ((lat2 - lat1) * Math.PI) / 180.0
+  let dLon = ((lon2 - lon1) * Math.PI) / 180.0
+
+  lat1 = (lat1 * Math.PI) / 180.0
+  lat2 = (lat2 * Math.PI) / 180.0
+
+  let a =
+    Math.pow(Math.sin(dLat / 2), 2) +
+    Math.pow(Math.sin(dLon / 2), 2) * Math.cos(lat1) * Math.cos(lat2)
+  let rad = 6371
+  let c = 2 * Math.asin(Math.sqrt(a))
+  return Math.ceil(rad * c)
+}
+
+getCoords().then((coords) => {
+  const lat2 = coords.latitude,
+    lon2 = coords.longitude
+  const lat1 = 14.771096,
+    lon1 = 100.691103
+  const distance = haversine(lat1, lon1, lat2, lon2)
+  document.getElementById("distance").innerHTML =
+    `Approximately ${distance.toFixed(2)} km away from you.🤯`
+})
+
 function updateHtml() {
   try {
     const articlesDiv = document.getElementById("articles")
