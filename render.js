@@ -17,7 +17,7 @@ let metadata = {}
 const marked = new Marked(
   markedHighlight({
     langPrefix: "hljs language-",
-    highlight(code, lang, info) {
+    highlight(code, lang) {
       const language = hljs.getLanguage(lang) ? lang : "plaintext"
       return hljs.highlight(code, { language }).value
     },
@@ -82,7 +82,9 @@ fs.readdir(contentsDir, async (err, files) => {
 </html>
 
 `)
-    const { document, window } = dom.window
+
+     // eslint-disable-next-line
+     const { document, window } = dom.window
 
     function setMetaTag(property, content) {
       let metaTag = document.querySelector(`meta[property="${property}"]\n`)

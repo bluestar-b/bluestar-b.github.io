@@ -11,6 +11,9 @@ const timeAgo = new TimeAgo("en-US")
 import metadata from "/metadata.json"
 import Fuse from "fuse.js"
 
+
+import "./dracula.css"
+
 const list = Object.entries(metadata).map(([key, item]) => ({
   key,
   ...item,
@@ -93,7 +96,7 @@ function updateHtml() {
     articlesDiv.innerHTML = ""
     for (const key in metadata) {
       const article = metadata[key]
-      const tags = article.tags.map((tag) => `<li>${tag}</li>`).join("")
+//      const tags = article.tags.map((tag) => `<li>${tag}</li>`).join("")
       const articleHtml = `
         <div>
           <a href="/blog/${key}">${article.title}</a>
@@ -200,7 +203,7 @@ function TodoList() {
   const render = () => {
     const todoList = document.getElementById("todoList")
     todoList.innerHTML = ""
-    todos.slice(0, visibleLabels).forEach((todo, index) => {
+    todos.slice(0, visibleLabels).forEach((todo) => {
       const div = document.createElement("div")
       const span = document.createElement("span")
       span.className = "text-md"
