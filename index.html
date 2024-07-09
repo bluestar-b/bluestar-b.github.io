@@ -28,12 +28,13 @@
     <div id="app" class="container mx-auto max-w-md px-2 md:max-w-2xl">
       <div class="mt-2 flex flex-col px-2">
         <div class="flex items-center justify-between">
-          <div>
+          <div class="flex items-center">
+            <img
+              alt="me in pixels"
+              class="mr-1.5 h-auto w-4 rounded-full"
+              src="/me_pixel.jpeg"
+            />
             <div class="text-xl font-bold">bluestar</div>
-            <div class="text-sm">
-              I question everything but get no answers :(
-            </div>
-            <div id="distance" class="text-sm">N/A</div>
           </div>
 
           <div class="text-xl font-bold">
@@ -70,6 +71,10 @@
         <br />
 
         <div class="mb-2 text-sm text-neutral-300">
+          <div class="text-sm">I question everything but get no answers :(</div>
+          <div id="distance" class="text-sm">N/A</div>
+          <br />
+
           <p>
             h uh Hello ... I'm mac, known as blue, bluestar, flamekung.<br />
             I joined the world on april 3rd, 2008, and became a space
@@ -109,7 +114,7 @@
           <h2 class="mb-2 text-2xl font-semibold">Articles</h2>
           <input
             type="text"
-            class="rounded-md border border-white bg-transparent px-1 py-0.5 text-sm text-white shadow-lg"
+            class="rounded-md border-2 border-white bg-transparent px-1 py-0.5 text-sm font-bold text-white shadow-lg"
             id="searchBox"
             autocomplete="off"
             placeholder="Search..."

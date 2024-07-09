@@ -12,11 +12,11 @@ tags:
 
 A test article for the entire blog included features like code highlighting.
 
-How is this possible almost from scratch?
+How i made this:
 
 - Gray matter
-- Marked.js
-- Marked plugin Highlight.js
+- Markdown-it
+- Markdown-it plugin shiki
 - Vite.js custom config
 - Tailwind CSS plugin typography
 
@@ -30,11 +30,8 @@ _“If you wish to make an apple pie from scratch, you must first invent the uni
 
 #### h4
 
-### <a name="head1234"></a>A Heading in this SO entry!
 
 #### Image
-
-![Pale Blue Dot](https://science.nasa.gov/wp-content/uploads/2023/09/P36254.jpg "Pale Blue Dot")
 
 #### Video
 
@@ -188,9 +185,3 @@ fetch("https://api.spacexdata.com/v4/launches")
     echo "Hello, World!"
     ```
 
-16. **Markdown:**
-    ```markdown
-    Hello, World!
-    ```
-
-#### Best answer is in this [link](#head1234)

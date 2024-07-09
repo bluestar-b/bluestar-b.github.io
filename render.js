@@ -25,6 +25,16 @@ const commitID = execSync("git rev-parse --short HEAD", {
   encoding: "utf8",
 }).trim()
 
+const options = {
+  weekday: "short",
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  hour12: true,
+}
+
 async function processFile(file) {
   console.log("Processing", file)
   const filePath = path.join(contentsDir, file)
@@ -109,7 +119,7 @@ async function processFile(file) {
   document.body.appendChild(footer);
 */
   document.getElementById("info").innerHTML =
-    `Author: ${data.author}<br />Publish on: ${new Date(data.date).toLocaleString()}<br/>Commit ID: ${commitID}`
+    `Author: ${data.author}<br />Publish on: ${new Date(data.date).toLocaleString("en-GB", options)}<br/>Commit ID: ${commitID}`
 
   const htmlContent = dom.serialize()
 
