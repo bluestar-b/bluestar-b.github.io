@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background-color: #212529;
+  --background-color: #0a0a0a;
   --text-color: #fcf2f7;
-  --link-text-color: #e38ac2;
+  --link-text-color: #ff1c86;
 }
 
 a:hover {
@@ -17,7 +17,7 @@ a {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
   background-color: var(--background-color);
@@ -29,32 +29,4 @@ body {
 }
 *:focus {
   @apply appearance-none outline-none;
-}
-
-.fade-in {
-  animation: fadeIn 400ms forwards;
-}
-
-.fade-out {
-  animation: fadeOut 400ms forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
 }
