@@ -110,7 +110,7 @@ getCoords().then((coords) => {
     lon1 = 100.691103
   const distance = haversine(lat1, lon1, lat2, lon2)
   document.getElementById("distance").innerHTML =
-    `Approximately ${distance.toFixed(2)} km away from you.🤯`
+    `Approximately ${distance.toFixed(2)} km away from you. :3`
 })
 
 const dropdownButton = document.getElementById("dropdown-button")
