@@ -113,6 +113,8 @@ getCoords().then((coords) => {
     `Approximately ${distance.toFixed(2)} km away from you. :3`
 })
 
+/*
+
 const dropdownButton = document.getElementById("dropdown-button")
 let dropdownMenu
 let isDropdownOpen = false
@@ -176,7 +178,7 @@ window.addEventListener("click", (event) => {
       isDropdownOpen = false
     }
   }
-})
+})*/
 
 const images = [
   { src: "/images/sunset.jpg", alt: "Chasing the sun on two wheels." },

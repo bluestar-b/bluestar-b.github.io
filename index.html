@@ -22,116 +22,81 @@
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap");
     </style>
+
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>
+      eruda.init()
+    </script>
   </head>
   <body>
-    <div id="app" class="container mx-auto max-w-md px-2 md:max-w-2xl">
-      <div class="mt-2 flex flex-col px-2">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center">
-            <img
-              alt="me in pixels"
-              class="mr-1.5 h-auto w-4 rounded-full"
-              src="/me_pixel.jpeg"
-            />
-            <div class="text-xl font-bold">bluestar</div>
-          </div>
+    <div id="app" class="container mx-auto max-w-md px-3 md:max-w-2xl">
+      <nav class="flex items-center py-1.5">
+        <img
+          class="mr-1.5 h-auto w-8 rounded-full"
+          alt="myself in pixel art"
+          src="/me_pixel.jpg"
+        />
+        <span class="text-xl font-bold">bluestar</span>
 
-          <div class="text-xl font-bold">
-            <div class="relative inline-block text-left">
-              <button id="dropdown-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="#FFFFFF"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
-                  ></path>
-                </svg>
-              </button>
-              <div
-                id="dropdown-menu"
-                class="absolute right-0 z-40 hidden w-40 origin-top-right rounded-md bg-[#212529] bg-[#424649] font-medium shadow-lg ring-1 ring-[#D6D7DC] ring-opacity-80"
-              >
-                <div
-                  class="p-2 py-2"
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby="dropdown-button"
-                ></div>
-              </div>
-            </div>
-          </div>
+        <div class="ml-auto space-x-2">
+          <a class="navlink">Github</a>
+          <a class="navlink">Discord</a>
         </div>
-        <br />
-        <hr />
+      </nav>
+
+      <br />
+
+      <div class="mb-1.5 text-sm text-neutral-300">
+        <div class="text-sm">I question everything but get no answers :(</div>
+        <div id="distance" class="text-sm">N/A</div>
         <br />
 
-        <div class="mb-2 text-sm text-neutral-300">
-          <div class="text-sm">I question everything but get no answers :(</div>
-          <div id="distance" class="text-sm">N/A</div>
-          <br />
+        <p>
+          h uh Hello ... I'm mac, known as blue, bluestar, flamekung.<br />
+          I joined the world on april 3rd, 2008, and (accidentally) became a
+          space enthusiast.<br />
+          studying in a non-formal education because life is so smooth that I
+          slipped and fell me and <br />
+        </p>
 
-          <p>
-            h uh Hello ... I'm mac, known as blue, bluestar, flamekung.<br />
-            I joined the world on april 3rd, 2008, and became a space
-            enthusiast.<br />
-            studying in a non-formal education because life is crazy to me and
-            bullying from normal school.<br />
-            I might be a super weird person from others perspective, but it's
-            okay, nothing is perfect no matter how hard you try.<br />
-          </p>
+        <p class="font-bold">
+          I might be a super weird person from others perspective, but it's
+          okay, nothing is perfect no matter how hard you try.
+        </p>
+        <br />
 
-          <h3>some specials:</h3>
-          I got adhd hyperactive and even ld in one (triple hit bruh). pretty
-          cool story, right?<br />
-          let's yap more. i got many voices in my head or even sometimes a
-          collision of millions of thoughts at once, or even a decision
-          collision, and even too fast thoughts, accidentally (pretty wild,
-          right?).<br />
-          but anyways...... (sounds of collided billion of thoughts, imagine
-          it).
-          <div class="mb-4 mt-1">
-            <blockquote class="relative mt-4">
-              <div class="relative z-10">
-                <p class="text-md">
-                  <em class="relative">
-                    <span class="relative z-10"
-                      >i don't even know why i'm questioning those things, even
-                      though i already know i won't get any answers.</span
-                    >
-                  </em>
-                </p>
-              </div>
-            </blockquote>
-          </div>
-        </div>
+        <h3>some specials:</h3>
+        I got adhd hyperactive and even ld in one (triple hit bruh). pretty cool
+        story, right?<br />
+        let's yap more. i got many voices in my head or even sometimes a
+        collision of millions of thoughts at once, or even a decision collision,
+        and even too fast thoughts, accidentally (pretty wild, right?).<br />
+        but anyways...... (sounds of collided billion of thoughts, imagine it).
+      </div>
 
-        <div>
-          <h2 class="mb-2 text-2xl font-semibold">Articles</h2>
-          <input
-            type="text"
-            class="rounded-md border-2 border-white bg-transparent px-1 py-0.5 text-sm font-bold text-white shadow-lg"
-            id="searchBox"
-            autocomplete="off"
-            placeholder="Search..."
+      <div>
+        <h2 class="mb-2 text-2xl font-semibold">Articles</h2>
+        <input
+          type="text"
+          class="rounded-md border-2 border-white bg-transparent px-1 py-0.5 text-sm font-bold text-white shadow-lg"
+          id="searchBox"
+          autocomplete="off"
+          placeholder="Search..."
+        />
+        <div class="justify-center" id="articles"></div>
+      </div>
+
+      <h2 class="mb-2 text-2xl font-semibold">Random photo</h2>
+      <div class="w-full text-center">
+        <div class="relative overflow-hidden">
+          <img
+            id="randomImage"
+            class="rounded-xl object-cover transition-opacity"
           />
-          <div class="justify-center" id="articles"></div>
         </div>
-
-        <h2 class="mb-2 text-2xl font-semibold">Random photo</h2>
-        <div class="w-full text-center">
-          <div class="relative overflow-hidden">
-            <img
-              id="randomImage"
-              class="rounded-xl object-cover transition-opacity"
-            />
-          </div>
-          <div id="photoInfo" class="p-2 font-semibold"></div>
-        </div>
+        <div id="photoInfo" class="p-2 font-semibold"></div>
       </div>
     </div>
 

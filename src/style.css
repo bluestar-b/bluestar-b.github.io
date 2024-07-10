@@ -5,11 +5,16 @@
 :root {
   --background-color: #0a0a0a;
   --text-color: #fcf2f7;
-  --link-text-color: #ff1c86;
+  --link-text-color: #ff3d98;
 }
 
 a:hover {
   --link-text-color: #eeb9da;
+}
+
+a.navlink {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 700;
 }
 
 a {
