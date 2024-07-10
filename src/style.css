@@ -36,7 +36,6 @@ body {
   @apply appearance-none outline-none;
 }
 
-
 .blog-link {
-   @apply mt-2 font-bold
+  @apply mt-2 font-bold;
 }

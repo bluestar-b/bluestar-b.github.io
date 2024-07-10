@@ -35,7 +35,7 @@ function renderResults(results) {
     div.classList.add("result-item")
     div.innerHTML = `
       <div>
-        <a class="blog-link" aria-label=${article.title} href="/blog/${item.key}">${item.title}</a>
+        <a class="blog-link" aria-label="${item.title}" href="/blog/${item.key}">${item.title}</a>
       </div>
     `
     resultsContainer.appendChild(div)
@@ -112,5 +112,3 @@ getCoords().then((coords) => {
   document.getElementById("distance").innerHTML =
     `Approximately ${distance.toFixed(2)} km away from you. :3`
 })
-
-
