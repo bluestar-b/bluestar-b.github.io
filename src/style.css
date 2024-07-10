@@ -38,5 +38,5 @@ body {
 
 
 .blog-link {
-   @apply mt-2 font-bold border-b-2
+   @apply mt-2 font-bold
 }
