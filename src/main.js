@@ -35,7 +35,7 @@ function renderResults(results) {
     div.classList.add("result-item")
     div.innerHTML = `
       <div>
-        <a href="/blog/${item.key}">${item.title}</a>
+        <a class="blog-link" href="/blog/${item.key}">${item.title}</a>
       </div>
     `
     resultsContainer.appendChild(div)
@@ -51,7 +51,7 @@ function updateHtml() {
       //      const tags = article.tags.map((tag) => `<li>${tag}</li>`).join("")
       const articleHtml = `
         <div>
-          <a href="/blog/${key}">${article.title}</a>
+          <a class="blog-link" href="/blog/${key}">${article.title}</a>
         </div>
       `
       articlesDiv.insertAdjacentHTML("beforeend", articleHtml)

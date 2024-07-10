@@ -35,3 +35,8 @@ body {
 *:focus {
   @apply appearance-none outline-none;
 }
+
+
+.blog-link {
+   @apply mt-2 font-bold border-b-2
+}
