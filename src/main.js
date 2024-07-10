@@ -35,7 +35,7 @@ function renderResults(results) {
     div.classList.add("result-item")
     div.innerHTML = `
       <div>
-        <a class="blog-link" href="/blog/${item.key}">${item.title}</a>
+        <a class="blog-link" aria-label=${article.title} href="/blog/${item.key}">${item.title}</a>
       </div>
     `
     resultsContainer.appendChild(div)
@@ -51,7 +51,7 @@ function updateHtml() {
       //      const tags = article.tags.map((tag) => `<li>${tag}</li>`).join("")
       const articleHtml = `
         <div>
-          <a class="blog-link" href="/blog/${key}">${article.title}</a>
+          <a class="blog-link" aria-label=${article.title} href="/blog/${key}">${article.title}</a>
         </div>
       `
       articlesDiv.insertAdjacentHTML("beforeend", articleHtml)
@@ -113,101 +113,4 @@ getCoords().then((coords) => {
     `Approximately ${distance.toFixed(2)} km away from you. :3`
 })
 
-/*
 
-const dropdownButton = document.getElementById("dropdown-button")
-let dropdownMenu
-let isDropdownOpen = false
-
-function createDropdownMenu() {
-  const menu = document.createElement("div")
-  menu.id = "dropdown-menu"
-  menu.classList.add(
-    "absolute",
-    "right-0",
-    "z-40",
-    "w-40",
-    "origin-top-right",
-    "rounded-md",
-    "bg-[#212529]",
-    "bg-[#424649]",
-    "font-medium",
-    "shadow-lg",
-    "ring-1",
-    "ring-[#D6D7DC]",
-    "ring-opacity-80",
-  )
-  menu.innerHTML = `
-    <div class="p-2 py-2" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-button">
-      <a href="https://github.com/bluestar-b" class="mb-1 block rounded-md px-2 py-1 text-sm hover:bg-[#4d5154]" aria-label="github: bluestar-b" role="menuitem" target="_blank">Github</a>
-      <a href="https://discord.com/users/8291561798035046708" aria-label="discord: bluestar.meow" class="mb-1 block rounded-md px-2 py-1 text-sm hover:bg-[#4d5154]" role="menuitem" target="_blank">Discord</a>
-      <a href="https://www.instagram.com/bluestar.pics" aria-label="Instagram: bluestar.pics" class="mb-1 block rounded-md px-2 py-1 text-sm hover:bg-[#4d5154]" target="_blank" role="menuitem">Instagram</a>
-      <a href="mailto:canikissfemboy@gmail.com" class="mb-1 block rounded-md px-2 py-1 text-sm hover:bg-[#4d5154]" role="menuitem">Email</a>
-      <a onclick="document.body.remove();" class="mb-1 block rounded-md px-2 py-1 text-sm hover:bg-[#4d5154]" role="menuitem">Click me!!!</a>
-    </div>
-  `
-  return menu
-}
-
-function toggleDropdown() {
-  isDropdownOpen = !isDropdownOpen
-  if (isDropdownOpen) {
-    dropdownMenu = createDropdownMenu()
-    dropdownButton.parentElement.appendChild(dropdownMenu)
-  } else {
-    if (dropdownMenu) {
-      dropdownButton.parentElement.removeChild(dropdownMenu)
-      dropdownMenu = null
-    }
-  }
-}
-
-dropdownButton.addEventListener("click", (event) => {
-  event.stopPropagation() // Prevent the event from bubbling up to the window listener
-  toggleDropdown()
-})
-
-window.addEventListener("click", (event) => {
-  if (isDropdownOpen && dropdownMenu) {
-    if (
-      !dropdownButton.contains(event.target) &&
-      !dropdownMenu.contains(event.target)
-    ) {
-      dropdownButton.parentElement.removeChild(dropdownMenu)
-      dropdownMenu = null
-      isDropdownOpen = false
-    }
-  }
-})*/
-
-const images = [
-  { src: "/images/sunset.jpg", alt: "Chasing the sun on two wheels." },
-  {
-    src: "/images/anusawari_prachathipatai.jpeg",
-    alt: "Anusawari Prachathipatai",
-  },
-  {
-    src: "/images/rama8_bridge_santi_chai_prakan_park.jpeg",
-    alt: "Rama 8 Bridge From Santi Chai Prakan Park",
-  },
-  {
-    src: "/images/river_view_rama8_bridge.jpeg",
-    alt: "River View From Rama 8 Bridge",
-  },
-  { src: "/images/sao_chingcha.jpeg", alt: "Sao Chingcha" },
-  {
-    src: "/images/sunset_view_from_rama8_bridge.jpeg",
-    alt: "Sunset View From Rama 8 Bridge",
-  },
-]
-
-const randomIMG = images[Math.floor(Math.random() * images.length)]
-
-const imageElement = document.getElementById("randomImage")
-
-imageElement.src = randomIMG.src
-imageElement.alt = randomIMG.alt
-
-const linkElement = document.createElement("a")
-linkElement.href = randomIMG.src
-linkElement.textContent = randomIMG.alt
