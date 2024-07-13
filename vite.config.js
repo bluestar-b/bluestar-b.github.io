@@ -2,7 +2,7 @@ import { defineConfig } from "vite"
 import { run } from "vite-plugin-run"
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer"
 
-import sitemapPlugin from './sitemap'
+import sitemapPlugin from "./sitemap"
 
 import fs from "fs"
 import path from "path"
@@ -48,9 +48,8 @@ const DEFAULT_OPTIONS = {
 
 export default defineConfig({
   plugins: [
-
-sitemapPlugin({
-      baseUrl: 'https://mac.notmycode.dev/',
+    sitemapPlugin({
+      baseUrl: "https://mac.notmycode.dev/",
     }),
 
     ViteImageOptimizer(DEFAULT_OPTIONS),
