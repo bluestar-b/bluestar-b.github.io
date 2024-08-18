@@ -21,10 +21,6 @@ md.use(
   }),
 )
 
-const commitID = execSync("git rev-parse --short HEAD", {
-  encoding: "utf8",
-}).trim()
-
 const options = {
   weekday: "short",
   month: "long",
@@ -119,7 +115,7 @@ async function processFile(file) {
   document.body.appendChild(footer);
 */
   document.getElementById("info").innerHTML =
-    `Author: ${data.author}<br />Publish on: ${new Date(data.date).toLocaleString("en-GB", options)}<br/>Commit ID: ${commitID}`
+    `Author: ${data.author}<br />Publish on: ${new Date(data.date).toLocaleString("en-GB", options)}`
 
   const htmlContent = dom.serialize()
 
