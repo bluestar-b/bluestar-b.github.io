@@ -36,13 +36,13 @@ const DEFAULT_OPTIONS = {
   logStats: true,
   ansiColors: true,
   png: {
-    quality: 30,
+    quality: 20,
   },
   jpeg: {
-    quality: 30,
+    quality: 20,
   },
   jpg: {
-    quality: 30,
+    quality: 20,
   },
 }
 

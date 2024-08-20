@@ -5,8 +5,6 @@ import { JSDOM } from "jsdom"
 import markdownit from "markdown-it"
 import Shiki from "@shikijs/markdown-it"
 
-import { execSync } from "child_process"
-
 const contentsDir = path.resolve(process.cwd(), "contents")
 const outputDir = path.resolve(process.cwd(), "blog")
 const metadataFile = path.resolve(process.cwd(), "metadata.json")
