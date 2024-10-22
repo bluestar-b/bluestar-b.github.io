@@ -1,5 +1,6 @@
 import "./style.css"
 
+/*
 import metadata from "/metadata.json"
 import Fuse from "fuse.js"
 
@@ -75,6 +76,8 @@ searchBox.addEventListener("input", (e) => {
     renderResults(results)
   }
 })
+
+*/
 
 async function getCoords() {
   const response = await fetch("https://ipapi.co/json/")
