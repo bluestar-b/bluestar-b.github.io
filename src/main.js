@@ -122,7 +122,8 @@ document.querySelectorAll("#images img").forEach((img) => {
   if (altText) {
     const overlay = document.createElement("div")
     overlay.className =
-      "absolute inset-0 text-white font-semibold text-xs p-2 opacity-0 group-hover:opacity-100 flex transition-opacity duration-300"
+      "absolute inset-0 text-white font-semibold text-xs p-2 opacity-0 group-hover:opacity-100 mt-1.5 rounded-r-lg bg-gray-900/50 h-fit w-fit flex transition-opacity duration-300"
+
     overlay.textContent = altText
 
     const wrapper = document.createElement("div")

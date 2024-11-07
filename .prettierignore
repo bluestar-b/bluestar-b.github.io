@@ -1,5 +1,5 @@
 contents/
 blog/
-
+public/
 # Ignore common image files
 *.{jpg,jpeg,png,gif,bmp,tiff,svg,webp}
