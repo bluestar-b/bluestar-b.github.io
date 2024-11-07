@@ -2,9 +2,7 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,html}", "./blog/**/*.html"],
   theme: {
-    extend: {
-      
-    },
+    extend: {},
   },
   plugins: [require("@tailwindcss/typography")],
 }

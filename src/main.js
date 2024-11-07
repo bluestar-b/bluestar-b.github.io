@@ -78,19 +78,18 @@ searchBox.addEventListener("input", (e) => {
 })
 
 */
-
+/*
 async function getCoords() {
   const response = await fetch("https://ipapi.co/json/")
   const data = await response.json()
   return { latitude: data.latitude, longitude: data.longitude }
 }
 
-/*
     Calculate the great circle distance between two points
     on the Earth's surface given their latitude and longitude
     in degrees.
 
-*/
+
 function haversine(lat1, lon1, lat2, lon2) {
   let dLat = ((lat2 - lat1) * Math.PI) / 180.0
   let dLon = ((lon2 - lon1) * Math.PI) / 180.0
@@ -115,6 +114,10 @@ getCoords().then((coords) => {
   document.getElementById("distance").innerHTML =
     `Approximately ${distance.toFixed(2)} km away from you. :3`
 })
+
+
+
+*/
 
 document.querySelectorAll("#images img").forEach((img) => {
   const altText = img.getAttribute("alt")
