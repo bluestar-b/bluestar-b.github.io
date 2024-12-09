@@ -9,6 +9,7 @@ const contentsDir = path.resolve(process.cwd(), "contents")
 const outputDir = path.resolve(process.cwd(), "blog")
 const metadataFile = path.resolve(process.cwd(), "metadata.json")
 let metadata = {}
+let blogUrls = []
 
 const md = new markdownit({
   html: true,
@@ -46,10 +47,15 @@ async function processFile(file) {
 <title>${data.title}</title>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap')
-    </style>
-      
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+ font-family: "IBM Plex Sans Thai", sans-serif;
+ }
+ </style>
 </head>
 
 <body class="prose md:prose-lg lg:prose-3xl p-2 prose-h1:text-3xl prose-invert prose-neutral mx-auto h-screen prose-img:rounded-xl prose-video:rounded-lg">
@@ -106,12 +112,6 @@ async function processFile(file) {
   scriptTag.setAttribute("src", "/src/main.js")
   document.body.appendChild(scriptTag)
 
-  /*
-  const footer = document.createElement("footer");
-  footer.className = "mt-auto text-white py-4";
-  footer.innerHTML = `<div class="mx-auto text-center text-xs">Generated on ${new Date().toLocaleString()}<br/></div>`;
-  document.body.appendChild(footer);
-*/
   document.getElementById("info").innerHTML =
     `Author: ${data.author}<br />Publish on: ${new Date(data.date).toLocaleString("en-GB", options)}`
 
@@ -120,6 +120,8 @@ async function processFile(file) {
   const outputPath = path.join(outputDir, `${baseFilename}.html`)
   fs.writeFileSync(outputPath, htmlContent)
   console.log(`Converted ${file} to ${baseFilename}.html`)
+
+  blogUrls.push(`/blog/${baseFilename}`)
 }
 
 fs.readdir(contentsDir, async (err, files) => {
@@ -144,4 +146,25 @@ fs.readdir(contentsDir, async (err, files) => {
 
   fs.writeFileSync(metadataFile, JSON.stringify(metadata, null, 2))
   console.log(`Metadata saved to ${metadataFile}`)
+
+  const blogHtmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog List</title>
+</head>
+<body>
+  <h1>Blog List</h1>
+  <ul>
+    ${blogUrls.map(url => `<li><a href="${url}">${url}</a></li>`).join('')}
+  </ul>
+</body>
+</html>
+  `
+
+  fs.writeFileSync(path.join(process.cwd(), 'blog.html'), blogHtmlContent)
+  console.log('Generated blog.html with list of URLs')
 })
+
