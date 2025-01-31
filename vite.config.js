@@ -65,7 +65,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: getHtmlEntries([
-	{ baseDir: ".", patterns: ["blog.html"] },
+        { baseDir: ".", patterns: ["blog.html"] },
         { baseDir: ".", patterns: ["index.html"] },
         { baseDir: "blog", patterns: ["*.html"] },
       ]),

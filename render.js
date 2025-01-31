@@ -158,13 +158,12 @@ fs.readdir(contentsDir, async (err, files) => {
 <body>
   <h1>Blog List</h1>
   <ul>
-    ${blogUrls.map(url => `<li><a href="${url}">${url}</a></li>`).join('')}
+    ${blogUrls.map((url) => `<li><a href="${url}">${url}</a></li>`).join("")}
   </ul>
 </body>
 </html>
   `
 
-  fs.writeFileSync(path.join(process.cwd(), 'blog.html'), blogHtmlContent)
-  console.log('Generated blog.html with list of URLs')
+  fs.writeFileSync(path.join(process.cwd(), "blog.html"), blogHtmlContent)
+  console.log("Generated blog.html with list of URLs")
 })
-

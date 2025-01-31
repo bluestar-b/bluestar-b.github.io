@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/font/JetBrainsMono[wght].ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background-color: #0a0a0a;
-  --text-color: #fcf2f7;
-  --link-text-color: #ff3d98;
+  --text-color: #ffffff;
+  --link-text-color: #ff96b4;
 }
 
 a:hover {
@@ -13,19 +20,37 @@ a:hover {
 }
 
 a.navlink {
-  font-family: "Ubuntu Mono", monospace;
   font-weight: 700;
 }
 
 a {
   color: var(--link-text-color);
+  font-weight: 700;
+}
+
+h2 {
+  @apply font-bold;
+  color: #fffff0;
+}
+
+p {
+  @apply text-sm;
+}
+.name {
+  text-align: left;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-family: "JetBrains Mono", monospace;
+  height: 100%;
+  min-height: 100vh;
+  background-image: url("https://photojournal.jpl.nasa.gov/jpeg/PIA21902.jpg");
+
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
   font-style: normal;
-  background-color: var(--background-color);
+  /*background-color: var(--background-color);*/
   color: var(--text-color);
 }
 
