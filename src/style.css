@@ -24,6 +24,7 @@ a.navlink {
 }
 
 a {
+  @apply text-sm;
   color: var(--link-text-color);
   font-weight: 700;
 }
@@ -36,21 +37,17 @@ h2 {
 p {
   @apply text-sm;
 }
-.name {
-  text-align: left;
-}
 
 body {
   font-family: "JetBrains Mono", monospace;
   height: 100%;
   min-height: 100vh;
-  background-image: url("https://photojournal.jpl.nasa.gov/jpeg/PIA21902.jpg");
+  background-image: url("/images/PIA21902.jpg");
 
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   font-style: normal;
-  /*background-color: var(--background-color);*/
   color: var(--text-color);
 }
 
