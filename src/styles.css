@@ -1,0 +1,129 @@
+@layer base, utils, components;
+@import "@webtui/css/base.css";
+@import "@webtui/css/utils/box.css";
+@import "@webtui/css/components/typography.css";
+@import "@webtui/plugin-nf";
+
+/*
+@font-face {
+  font-family: "JetBrainsMonoNFM";
+  src: url("/fonts/JetBrainsMonoNerdFontMono-Bold.ttf") format("truetype");
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "JetBrainsMonoNFM";
+  src: url("/fonts/JetBrainsMonoNerdFontMono-BoldItalic.ttf") format("truetype");
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "JetBrainsMonoNFM";
+  src: url("/fonts/JetBrainsMonoNerdFontMono-Italic.ttf") format("truetype");
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 400;
+}
+*/
+
+
+
+@font-face {
+  font-family: "JetBrainsMonoNFM";
+  src: url("/fonts/JetBrainsMonoNerdFontMono-Regular.ttf") format("truetype");
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.segment {
+  font-size: 1.5ch;
+  height: 100%;
+  width: fit-content;
+  box-shadow: 2px 2px 5px rgba(28, 28, 28, 1);
+}
+.path {
+  background-color: #262eff;
+  color: #fff;
+  padding: 0 4px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+   font-weight: 700;
+}
+
+@layer base {
+  :root {
+    --text-color: #ffffff;
+    --link-text-color: #ff96b4;
+  }
+}
+
+a:hover {
+  --link-text-color: #eeb9da;
+}
+
+a.navlink {
+  font-weight: 700;
+}
+
+a {
+  color: var(--link-text-color);
+  font-weight: 700;
+}
+
+h2 {
+  color: #fff;
+}
+
+p:hover,
+li:hover,
+span:hover,
+h1:hover,
+h2:hover,
+h3:hover {
+  background: #333333;
+}
+
+body {
+  font-family: "JetBrainsMonoNFM", monospace;
+  height: 100%;
+  min-height: 100vh;
+  background-image: url("/images/AS17-152-23419_contrast_compress.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--text-color);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 768px;
+}
+
+.window-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.window-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 6px;
+}
+
+.control-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125rem;
+  cursor: pointer;
+}
