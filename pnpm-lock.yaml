@@ -17,6 +17,9 @@ importers:
       vite:
         specifier: ^5.2.11
         version: 5.2.11
+      yaml:
+        specifier: ^2.7.1
+        version: 2.7.1
 
 packages:
   "@esbuild/aix-ppc64@0.20.2":
@@ -455,6 +458,14 @@ packages:
       terser:
         optional: true
 
+  yaml@2.7.1:
+    resolution:
+      {
+        integrity: sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==,
+      }
+    engines: { node: ">= 14" }
+    hasBin: true
+
 snapshots:
   "@esbuild/aix-ppc64@0.20.2":
     optional: true
@@ -649,3 +660,5 @@ snapshots:
       rollup: 4.17.2
     optionalDependencies:
       fsevents: 2.3.3
+
+  yaml@2.7.1: {}

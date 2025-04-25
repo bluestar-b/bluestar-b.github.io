@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bluestar's site</title>
+
+    <meta property="og:title" content="i meow at cats" />
+    <meta
+      property="og:description"
+      content="I don't know what will come, but here we go."
+    />
+    <meta property="og:image" content="/" />
+    <meta name="theme-color" content="#ff87d5" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="i meow at cats" />
+    <meta
+      name="twitter:description"
+      content="I don't know what will come, but here we go."
+    />
+    <meta name="twitter:image" content="" />
+    <link type="text/plain" rel="author" href="/humans.txt" />
+  </head>
+  <body data-webtui-theme="dark">
+    <main box-="double" class="container">
+      <section>
+        <div>
+          <div>
+            <a href="/" class="segment path" style="margin-right: 1rem"
+              >[ ~/ ]</a
+            >
+          </div>
+        </div>
+
+        <header>
+          <h1>bluestar's gallery</h1>
+        </header>
+        <p>
+          I want the preview to load faster and reduce your frustrations, so you
+          can just click 'View Original' to see the full resolution.
+        </p>
+        <div id="gallery" style="margin-top: 2rem"></div>
+      </section>
+    </main>
+
+    <script type="module" src="src/main.js"></script>
+
+    <script type="module">
+      import images from "./src/images.js";
+
+      const container = document.getElementById("gallery");
+
+      images.forEach(({ title, desc, image, thumbnail }) => {
+        const html = `
+          <div box-="double">
+            <img src="${thumbnail}" alt="${title}" style="width: 100%; display: block;" />
+	    <div style="padding-bottom: 0.25rem; padding-top: 0.25rem;"></div>
+            <div style="">
+              <h2>${title}</h2>
+              <p>${desc}</p>
+	      <a href="${image}"><span is-="badge">View original </span></a>
+            </div>
+          </div>
+        `;
+        container.insertAdjacentHTML("beforeend", html);
+      });
+    </script>
+  </body>
+</html>

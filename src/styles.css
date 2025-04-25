@@ -3,6 +3,7 @@
 @import "@webtui/css/utils/box.css";
 @import "@webtui/css/components/typography.css";
 @import "@webtui/plugin-nf";
+@import "@webtui/css/components/badge.css";
 
 /*
 @font-face {
@@ -30,8 +31,6 @@
 }
 */
 
-
-
 @font-face {
   font-family: "JetBrainsMonoNFM";
   src: url("/fonts/JetBrainsMonoNerdFontMono-Regular.ttf") format("truetype");
@@ -52,9 +51,20 @@
   padding: 0 4px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.125rem;
+}
 
-h1, h2, h3, h4, h5, h6 {
-   font-weight: 700;
+h1 {
+  font-size: 1.25rem;
 }
 
 @layer base {
