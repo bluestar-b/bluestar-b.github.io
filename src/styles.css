@@ -31,6 +31,14 @@
 }
 */
 
+
+.post {
+  word-break: break-word;
+}
+
+
+
+
 @font-face {
   font-family: "JetBrainsMonoNFM";
   src: url("/fonts/JetBrainsMonoNerdFontMono-Regular.ttf") format("truetype");
