@@ -8,7 +8,9 @@ self.addEventListener("message", async (e) => {
   }
 
   try {
-    const res = await fetch(`https://yapter.bluestardotos.workers.dev/posts/${page}`);
+    const res = await fetch(
+      `https://yapter.bluestardotos.workers.dev/posts/${page}`,
+    );
     const data = await res.json();
     cache.set(page, data);
     postMessage({ page, data });

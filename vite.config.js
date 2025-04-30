@@ -6,7 +6,8 @@ export default defineConfig({
       input: {
         main: "./index.html",
         gallery: "./gallery.html",
-	reimagined: "./reimagined.html",
+        reimagined: "./reimagined.html",
+        test: "./test.html",
       },
     },
   },

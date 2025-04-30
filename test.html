@@ -6,21 +6,30 @@
     <title>bluestar's site</title>
 
     <meta property="og:title" content="i meow at cats" />
-    <meta property="og:description" content="I don't know what will come, but here we go." />
+    <meta
+      property="og:description"
+      content="I don't know what will come, but here we go."
+    />
     <meta property="og:image" content="/" />
     <meta name="theme-color" content="#ff87d5" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="i meow at cats" />
-    <meta name="twitter:description" content="I don't know what will come, but here we go." />
+    <meta
+      name="twitter:description"
+      content="I don't know what will come, but here we go."
+    />
     <meta name="twitter:image" content="" />
     <link type="text/plain" rel="author" href="/humans.txt" />
-    <style>
-  
-    </style>
+    <style></style>
   </head>
   <body data-webtui-theme="dark">
     <main box-="double" class="container">
       <section>
+        <div>
+          <a href="/" class="segment path" style="margin-right: 0.2rem"
+            >[ ~/ ]</a
+          >
+        </div>
         <header>
           <h1>My yappings</h1>
         </header>
@@ -30,88 +39,91 @@
           <div class="pagination">
             <div is-="badge" id="prev"> Prev</div>
             <span id="pageNum"></span>
-            <divd is-="badge" id="next">Next </div>
+            <div is-="badge" id="next">Next </div>
           </div>
         </div>
       </section>
     </main>
 
     <script type="module" src="src/main.js"></script>
-    
+
     <script type="module">
       const postsContainer = document.getElementById("posts");
       const prevBtn = document.getElementById("prev");
       const nextBtn = document.getElementById("next");
       const pageNum = document.getElementById("pageNum");
-    
+
       let currentPage = 1;
       const prefetchedPages = new Map();
-    
+
       // Web Worker setup
       const worker = new Worker("prefetch-worker.js", { type: "module" });
       worker.addEventListener("message", (e) => {
         const { page, data } = e.data;
         if (data?.success) prefetchedPages.set(page, data);
       });
-    
+
       function prefetch(page, totalPages) {
         if (page <= totalPages && !prefetchedPages.has(page)) {
           worker.postMessage({ page });
         }
       }
-    
+
       async function fetchPageData(page) {
         if (prefetchedPages.has(page)) {
           return prefetchedPages.get(page);
         }
-        const res = await fetch(`https://yapter.bluestardotos.workers.dev/posts/${page}`);
+        const res = await fetch(
+          `https://yapter.bluestardotos.workers.dev/posts/${page}`,
+        );
         const data = await res.json();
         return data;
       }
-    
+
       async function fetchPosts(page) {
         const data = await fetchPageData(page);
         postsContainer.innerHTML = "";
-    
+
         if (!data.success) {
           postsContainer.innerHTML = `<p>Error: ${data.message}</p>`;
           return;
         }
-    
+
         postsContainer.innerHTML = data.posts
           .sort((a, b) => new Date(b.posting_date) - new Date(a.posting_date))
-          .map(post => `
+          .map(
+            (post) => `
             <div class="post" box-="square">
               <h3 class="post-date">${new Date(post.posting_date).toLocaleString()}</h3>
               <div class="post-content">${post.content}</div>
             </div>
-          `)
+          `,
+          )
           .join("");
-    
+
         pageNum.textContent = `Page ${data.currentPage} of ${data.totalPages}`;
         prevBtn.disabled = data.currentPage === 1;
         nextBtn.disabled = data.currentPage === data.totalPages;
-    
+
         const nextPage = data.currentPage + 1;
         if (nextPage <= data.totalPages) {
           prefetch(nextPage, data.totalPages);
         }
       }
-    
+
       prevBtn.addEventListener("click", () => {
         if (currentPage > 1) {
           currentPage--;
           fetchPosts(currentPage);
         }
       });
-    
+
       nextBtn.addEventListener("click", () => {
         currentPage++;
         fetchPosts(currentPage);
       });
-    
+
       fetchPosts(currentPage);
     </script>
-    
   </body>
 </html>
