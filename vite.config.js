@@ -8,6 +8,8 @@ export default defineConfig({
         gallery: "./gallery.html",
         reimagined: "./reimagined.html",
         yap: "./yap.html",
+        worker1: "./markdownWorker.js",
+        worker2: "./prefetch-worker.js",
       },
     },
   },
