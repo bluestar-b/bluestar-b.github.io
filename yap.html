@@ -32,6 +32,7 @@
         </div>
         <header>
           <h1>My yappings</h1>
+          <p>It's your web worker job to parse markdown thanks client :3</p>
         </header>
 
         <div class="container">
@@ -48,23 +49,47 @@
     <script type="module" src="src/main.js"></script>
 
     <script type="module">
+      function markdownParse(markdownText) {
+        return new Promise((resolve, reject) => {
+          const mdWorker = new Worker("./markdownWorker.js", {
+            type: "module",
+          });
+
+          mdWorker.onmessage = (e) => {
+            const html = e.data;
+            resolve(html);
+            mdWorker.terminate();
+          };
+
+          mdWorker.onerror = (err) => {
+            reject(err);
+            mdWorker.terminate();
+          };
+
+          mdWorker.postMessage(markdownText);
+        });
+      }
+
       const postsContainer = document.getElementById("posts");
       const prevBtn = document.getElementById("prev");
       const nextBtn = document.getElementById("next");
       const pageNum = document.getElementById("pageNum");
 
       let currentPage = 1;
+      let maxPage = null;
       const prefetchedPages = new Map();
 
-      // Web Worker setup
       const worker = new Worker("prefetch-worker.js", { type: "module" });
+
       worker.addEventListener("message", (e) => {
         const { page, data } = e.data;
-        if (data?.success) prefetchedPages.set(page, data);
+        if (data?.success) {
+          prefetchedPages.set(page, data);
+        }
       });
 
-      function prefetch(page, totalPages) {
-        if (page <= totalPages && !prefetchedPages.has(page)) {
+      function prefetch(page) {
+        if (!prefetchedPages.has(page)) {
           worker.postMessage({ page });
         }
       }
@@ -76,8 +101,7 @@
         const res = await fetch(
           `https://yapter.bluestardotos.workers.dev/posts/${page}`,
         );
-        const data = await res.json();
-        return data;
+        return await res.json();
       }
 
       async function fetchPosts(page) {
@@ -89,38 +113,45 @@
           return;
         }
 
-        postsContainer.innerHTML = data.posts
-          .sort((a, b) => new Date(b.posting_date) - new Date(a.posting_date))
-          .map(
-            (post) => `
-            <div class="post" box-="square">
-              <h3 class="post-date">${new Date(post.posting_date).toLocaleString()}</h3>
-              <div class="post-content">${post.content}</div>
-            </div>
-          `,
-          )
-          .join("");
+        currentPage = data.currentPage;
+        maxPage = data.totalPages;
+
+        const posts = await Promise.all(
+          data.posts
+            .sort((a, b) => new Date(b.posting_date) - new Date(a.posting_date))
+            .map(async (post) => {
+              const parsedContent = await markdownParse(post.content);
+              console.log(parsedContent);
+              return `
+      <div class="post" box-="square">
+        <h3 class="post-date">${new Date(post.posting_date).toLocaleString()}</h3>
+        <div class="post-content">${parsedContent}</div>
+      </div>
+    `;
+            }),
+        );
+
+        postsContainer.innerHTML = posts.join("");
 
         pageNum.textContent = `Page ${data.currentPage} of ${data.totalPages}`;
-        prevBtn.disabled = data.currentPage === 1;
-        nextBtn.disabled = data.currentPage === data.totalPages;
+        prevBtn.disabled = !data.prevPage;
+        nextBtn.disabled = !data.nextPage;
 
-        const nextPage = data.currentPage + 1;
-        if (nextPage <= data.totalPages) {
-          prefetch(nextPage, data.totalPages);
+        if (data.nextPage !== null && !prefetchedPages.has(data.nextPage)) {
+          prefetch(data.nextPage);
         }
       }
 
       prevBtn.addEventListener("click", () => {
         if (currentPage > 1) {
-          currentPage--;
-          fetchPosts(currentPage);
+          fetchPosts(currentPage - 1);
         }
       });
 
       nextBtn.addEventListener("click", () => {
-        currentPage++;
-        fetchPosts(currentPage);
+        if (maxPage && currentPage < maxPage) {
+          fetchPosts(currentPage + 1);
+        }
       });
 
       fetchPosts(currentPage);

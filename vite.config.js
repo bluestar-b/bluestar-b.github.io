@@ -7,7 +7,7 @@ export default defineConfig({
         main: "./index.html",
         gallery: "./gallery.html",
         reimagined: "./reimagined.html",
-        test: "./test.html",
+        yap: "./yap.html",
       },
     },
   },
