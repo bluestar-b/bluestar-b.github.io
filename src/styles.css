@@ -35,6 +35,9 @@
   word-break: break-word;
 }
 
+img {
+  max-width: 100%;
+}
 @font-face {
   font-family: "JetBrainsMonoNFM";
   src: url("/fonts/JetBrainsMonoNerdFontMono-Regular.ttf") format("truetype");
