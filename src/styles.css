@@ -5,7 +5,6 @@
 @import "@webtui/plugin-nf";
 @import "@webtui/css/components/badge.css";
 
-
 .post {
   word-break: break-all;
 }
@@ -19,8 +18,8 @@ code {
 
 img {
   max-width: 100%;
- 
 }
+
 @font-face {
   font-family: "JetBrainsMonoNFM";
   src: url("/fonts/JetBrainsMonoNerdFontMono-Regular.woff2") format("woff2");
