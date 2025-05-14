@@ -22,7 +22,8 @@ img {
 
 @font-face {
   font-family: "JetBrainsMonoNFM";
-  src: url("/fonts/JetBrainsMonoNerdFontMono-RegularPatched.woff2") format("woff2");
+  src: url("/fonts/JetBrainsMonoNerdFontMono-RegularPatched.woff2")
+    format("woff2");
   font-display: swap;
   font-stretch: normal;
   font-style: normal;

@@ -10,6 +10,7 @@ export default defineConfig({
         yap: "./yap.html",
         worker1: "./markdownWorker.js",
         worker2: "./prefetch-worker.js",
+        minimal: "./minimal.html",
       },
     },
   },
