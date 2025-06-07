@@ -1,5 +1,64 @@
 import "./styles.css";
 
+document.addEventListener('touchend', () => {
+  const sel = window.getSelection();
+  if (!sel.isCollapsed) {
+    const start = sel.anchorOffset;
+    const end = sel.focusOffset;
+    const text = sel.toString();
+    console.log(`Mobile select from ${start} to ${end}: "${text}"`);
+  }
+});
+
+
+
+const schoolDays = [0, 2];
+const today = new Date();
+const year = today.getFullYear();
+const endDate = new Date(year, 11, 31);
+
+let total = 0;
+let remaining = 0;
+let nextDate = null;
+
+for (let d = new Date(year, 0, 1); d <= endDate; d.setDate(d.getDate() + 1)) {
+  if (schoolDays.includes(d.getDay())) {
+    total++;
+    if (d >= today) {
+      remaining++;
+      if (!nextDate) nextDate = new Date(d);
+    }
+  }
+}
+
+const timeDifference = nextDate - today;
+const hoursLeft = timeDifference / (1000 * 3600);
+
+const now = new Date();
+const nowGMT7 = new Date(
+  now.toLocaleString("en-US", { timeZone: "Asia/Bangkok" }),
+);
+const isToday = nextDate.toDateString() === nowGMT7.toDateString();
+const hourInGMT7 = nowGMT7.getHours();
+
+let timeLeftStr;
+if (isToday && hourInGMT7 >= 8 && hourInGMT7 < 14) {
+  timeLeftStr = `today from 08:00 to 14:00 (GMT+7)`;
+} else if (hoursLeft < 24) {
+  const hours = hoursLeft.toFixed(1);
+  timeLeftStr = `or in ${hours} hour${hours == 1 ? "" : "s"}`;
+} else {
+  const days = (hoursLeft / 24).toFixed(2);
+  timeLeftStr = `or in ${days} day${days == 1 ? "" : "s"}`;
+}
+
+const sentence = `My school days are every Tuesday and Sunday, so there are ${remaining}/${total} school days left. The next school day is ${nextDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}, ${timeLeftStr}.`;
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("schoolStatus").textContent = sentence;
+  console.timeEnd("blockingCalc");
+});
+
 function getVibe(hour) {
   if (hour >= 5 && hour < 12) return "morning";
   if (hour >= 12 && hour < 17) return "afternoon";
