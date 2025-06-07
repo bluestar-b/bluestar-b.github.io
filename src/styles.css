@@ -30,6 +30,10 @@ img {
   font-weight: 400;
 }
 
+:root {
+  color-scheme: dark;
+}
+
 .segment {
   font-size: 1.3ch;
   height: 100%;
