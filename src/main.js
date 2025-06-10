@@ -1,62 +1,72 @@
 import "./styles.css";
 
-document.addEventListener('touchend', () => {
-  const sel = window.getSelection();
-  if (!sel.isCollapsed) {
-    const start = sel.anchorOffset;
-    const end = sel.focusOffset;
-    const text = sel.toString();
-    console.log(`Mobile select from ${start} to ${end}: "${text}"`);
-  }
-});
+const schoolDays = [0, 3]; // Sunday, Wed
 
+function stripTime(date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
 
+const now = new Date();
+const nowGMT7 = new Date(
+  now.toLocaleString("en-US", { timeZone: "Asia/Bangkok" }),
+);
+const todayDateOnly = stripTime(nowGMT7);
+const year = nowGMT7.getFullYear();
 
-const schoolDays = [0, 2];
-const today = new Date();
-const year = today.getFullYear();
-const endDate = new Date(year, 11, 31);
+const startDate = new Date(
+  new Date(`${year}-01-01T00:00:00`).toLocaleString("en-US", {
+    timeZone: "Asia/Bangkok",
+  }),
+);
+const endDate = new Date(
+  new Date(`${year}-12-31T00:00:00`).toLocaleString("en-US", {
+    timeZone: "Asia/Bangkok",
+  }),
+);
 
 let total = 0;
 let remaining = 0;
 let nextDate = null;
 
-for (let d = new Date(year, 0, 1); d <= endDate; d.setDate(d.getDate() + 1)) {
+for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
   if (schoolDays.includes(d.getDay())) {
     total++;
-    if (d >= today) {
+    if (stripTime(d) >= todayDateOnly) {
       remaining++;
       if (!nextDate) nextDate = new Date(d);
     }
   }
 }
 
-const timeDifference = nextDate - today;
-const hoursLeft = timeDifference / (1000 * 3600);
+// Set school start time on nextDate to 08:00 AM GMT+7
+const schoolStart = new Date(nextDate);
+schoolStart.setHours(8, 0, 0, 0);
 
-const now = new Date();
-const nowGMT7 = new Date(
-  now.toLocaleString("en-US", { timeZone: "Asia/Bangkok" }),
-);
-const isToday = nextDate.toDateString() === nowGMT7.toDateString();
+const timeDifference = schoolStart - nowGMT7;
+const hoursLeft = timeDifference / (1000 * 3600);
 const hourInGMT7 = nowGMT7.getHours();
 
 let timeLeftStr;
-if (isToday && hourInGMT7 >= 8 && hourInGMT7 < 14) {
+if (
+  stripTime(nextDate).getTime() === todayDateOnly.getTime() &&
+  hourInGMT7 >= 8 &&
+  hourInGMT7 < 14
+) {
   timeLeftStr = `today from 08:00 to 14:00 (GMT+7)`;
+} else if (hoursLeft < 0) {
+  timeLeftStr = `school already ended today, waiting for next school day`;
 } else if (hoursLeft < 24) {
   const hours = hoursLeft.toFixed(1);
-  timeLeftStr = `or in ${hours} hour${hours == 1 ? "" : "s"}`;
+  timeLeftStr = `${hours} hour${hours == 1 ? "" : "s"}`;
 } else {
   const days = (hoursLeft / 24).toFixed(2);
-  timeLeftStr = `or in ${days} day${days == 1 ? "" : "s"}`;
+  timeLeftStr = `${days} day${days == 1 ? "" : "s"}`;
 }
 
-const sentence = `My school days are every Tuesday and Sunday, so there are ${remaining}/${total} school days left. The next school day is ${nextDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}, ${timeLeftStr}.`;
+const sentence = `My school days are every Wednesday and Sunday, so there are ${remaining}/${total} school days left. The next school day is ${nextDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}, ${timeLeftStr}.`;
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("schoolStatus").textContent = sentence;
-  console.timeEnd("blockingCalc");
 });
 
 function getVibe(hour) {
