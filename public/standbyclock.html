@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>world clock</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>
+      eruda.init();
+    </script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        font-family: "JetBrains Mono", monospace;
+        color: white;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #map {
+        position: relative;
+        width: 90vw;
+        max-height: 90vh;
+        height: auto;
+        overflow: hidden;
+      }
+
+      #map-content img {
+        display: block;
+        width: 100%;
+        height: auto;
+        user-select: none;
+        pointer-events: auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      #map-label,
+      #time {
+        position: absolute;
+        z-index: 10;
+        pointer-events: auto;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        user-select: none;
+        text-shadow: 0 0 5px black;
+      }
+
+      #map-label {
+        top: 1.5%;
+        left: 2%;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ff9f0a;
+      }
+
+      #time {
+        bottom: 1.5%;
+        left: 2%;
+        font-size: 2.25rem;
+        font-weight: bold;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map">
+      <div id="map-label">Lop buri, TH</div>
+      <div id="time">11:69:47 PM</div>
+      <div id="map-content"></div>
+    </div>
+
+    <script type="module" src="src/clock.js"></script>
+  </body>
+</html>
