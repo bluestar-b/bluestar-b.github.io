@@ -21,6 +21,29 @@
     />
     <meta name="twitter:image" content="" />
     <link type="text/plain" rel="author" href="/humans.txt" />
+
+
+<style>
+
+    .exif-grid {
+      display: grid;
+      grid-template-columns: 128px 1fr;
+      gap: 0;
+    }
+
+    .label {
+      border-bottom: 1px solid white;
+      border-right: 1px solid white;
+    }
+
+    .value {
+      border-bottom: 1px solid white;
+    }
+
+
+  </style>
+
+
   </head>
   <body data-webtui-theme="dark">
     <main box-="double" class="container">
@@ -46,25 +69,64 @@
 
     <script type="module" src="src/main.js"></script>
 
-    <script type="module">
-      import images from "./src/images.js";
+<script type="module">
+  import images from "./src/images.js";
 
-      const container = document.getElementById("gallery");
+  const container = document.getElementById("gallery");
 
-      images.forEach(({ title, desc, image, thumbnail }) => {
-        const html = `
-          <div box-="double">
-            <img src="${thumbnail}" alt="${title}" style="width: 100%; display: block;" />
-	    <div style="padding-bottom: 0.25rem; padding-top: 0.25rem;"></div>
-            <div style="">
-              <h2>${title}</h2>
-              <p>${desc}</p>
-	      <a href="${image}"><span is-="badge">View original</span></a>
+  images.forEach(({ title = "Untitled", desc = "", image = "#", thumbnail = "#", exif = {} }) => {
+    const safe = (obj, path, fallback = "") =>
+      path.split('.').reduce((acc, part) => acc && acc[part] !== undefined ? acc[part] : null, obj) ?? fallback;
+
+    const lat = safe(exif, "GPS.Latitude");
+    const lng = safe(exif, "GPS.Longitude");
+    const latLngStr = (typeof lat === "number" && typeof lng === "number")
+      ? `${lat.toFixed(6)}, ${lng.toFixed(6)}`
+      : "N/A";
+
+    const mapLink = (typeof lat === "number" && typeof lng === "number")
+      ? `<a href="https://www.google.com/maps?q=${lat.toFixed(6)},${lng.toFixed(6)}" target="_blank">Open in Google Maps</a>`
+      : "";
+
+    const html = `
+      <div box-="double">
+        <img src="${thumbnail}" alt="${title}" style="width: 100%; display: block;" />
+        <div style="padding-bottom: 0.25rem; padding-top: 0.25rem;"></div>
+        <div style="">
+          <h2>${title}</h2>
+          <p>${desc}</p>
+          <br/>
+          <b>IMAGE DETAILS</b>
+
+          <div class="exif-grid">
+            <div class="label">Camera</div><div class="value">${safe(exif, "Make", "Unknown")}</div>
+            <div class="label">Model</div><div class="value">${safe(exif, "Model", "Unknown")}</div>
+            <div class="label">Edited</div><div class="value">${safe(exif, "Software", "Unknown")}</div>
+            <div class="label">Date Taken</div><div class="value">${safe(exif, "DateTimeOriginal", "Unknown")}</div>
+            <div class="label">Date Edited</div><div class="value">${safe(exif, "DateTime", "Unknown")}</div>
+            <div class="label">Resolution</div>
+            <div class="value">${safe(exif, "Resolution.Width", "?")}x${safe(exif, "Resolution.Height", "?")}</div>
+            <div class="label">Megapixels</div><div class="value">${safe(exif, "Resolution.Megapixels", "?")}</div>
+            <div class="label">ISO</div><div class="value">${safe(exif, "ISO", "N/A")}</div>
+            <div class="label">Shutter Speed</div><div class="value">${safe(exif, "ShutterSpeed", "N/A")}</div>
+            <div class="label">Aperture</div><div class="value">${safe(exif, "Aperture", "N/A")}</div>
+            <div class="label">Focal Length</div><div class="value">${safe(exif, "FocalLength", "N/A")}</div>
+            <div class="label">Flash</div><div class="value">${safe(exif, "Flash", "N/A")}</div>
+            <div class="label">GPS</div>
+            <div class="value">
+              ${latLngStr}<br/>
+              ${mapLink}
             </div>
           </div>
-        `;
-        container.insertAdjacentHTML("beforeend", html);
-      });
-    </script>
+        </div>
+        <a href="${image}"><span is-="badge">View original</span></a>
+      </div>
+    `;
+
+    container.insertAdjacentHTML("beforeend", html);
+  });
+</script>
+
+
   </body>
 </html>

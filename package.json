@@ -17,6 +17,7 @@
     "@webtui/plugin-nf": "^0.0.1",
     "cities.json": "^1.1.50",
     "dotted-map": "^2.2.3",
+    "exifreader": "^4.31.1",
     "markdown-it": "^14.1.0"
   }
 }
