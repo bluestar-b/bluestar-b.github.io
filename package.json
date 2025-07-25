@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^5.2.11",
-    "yaml": "^2.7.1"
+    "vite": "^5.4.19",
+    "yaml": "^2.8.0"
   },
   "dependencies": {
     "@webtui/css": "^0.0.3",

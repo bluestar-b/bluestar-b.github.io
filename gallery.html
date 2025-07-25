@@ -22,28 +22,22 @@
     <meta name="twitter:image" content="" />
     <link type="text/plain" rel="author" href="/humans.txt" />
 
+    <style>
+      .exif-grid {
+        display: grid;
+        grid-template-columns: 128px 1fr;
+        gap: 0;
+      }
 
-<style>
+      .label {
+        border-bottom: 1px solid white;
+        border-right: 1px solid white;
+      }
 
-    .exif-grid {
-      display: grid;
-      grid-template-columns: 128px 1fr;
-      gap: 0;
-    }
-
-    .label {
-      border-bottom: 1px solid white;
-      border-right: 1px solid white;
-    }
-
-    .value {
-      border-bottom: 1px solid white;
-    }
-
-
-  </style>
-
-
+      .value {
+        border-bottom: 1px solid white;
+      }
+    </style>
   </head>
   <body data-webtui-theme="dark">
     <main box-="double" class="container">
@@ -69,26 +63,41 @@
 
     <script type="module" src="src/main.js"></script>
 
-<script type="module">
-  import images from "./src/images.js";
+    <script type="module">
+      import images from "./src/images.js";
 
-  const container = document.getElementById("gallery");
+      const container = document.getElementById("gallery");
 
-  images.forEach(({ title = "Untitled", desc = "", image = "#", thumbnail = "#", exif = {} }) => {
-    const safe = (obj, path, fallback = "") =>
-      path.split('.').reduce((acc, part) => acc && acc[part] !== undefined ? acc[part] : null, obj) ?? fallback;
+      images.forEach(
+        ({
+          title = "Untitled",
+          desc = "",
+          image = "#",
+          thumbnail = "#",
+          exif = {},
+        }) => {
+          const safe = (obj, path, fallback = "") =>
+            path
+              .split(".")
+              .reduce(
+                (acc, part) =>
+                  acc && acc[part] !== undefined ? acc[part] : null,
+                obj,
+              ) ?? fallback;
 
-    const lat = safe(exif, "GPS.Latitude");
-    const lng = safe(exif, "GPS.Longitude");
-    const latLngStr = (typeof lat === "number" && typeof lng === "number")
-      ? `${lat.toFixed(6)}, ${lng.toFixed(6)}`
-      : "N/A";
+          const lat = safe(exif, "GPS.Latitude");
+          const lng = safe(exif, "GPS.Longitude");
+          const latLngStr =
+            typeof lat === "number" && typeof lng === "number"
+              ? `${lat.toFixed(6)}, ${lng.toFixed(6)}`
+              : "N/A";
 
-    const mapLink = (typeof lat === "number" && typeof lng === "number")
-      ? `<a href="https://www.google.com/maps?q=${lat.toFixed(6)},${lng.toFixed(6)}" target="_blank">Open in Google Maps</a>`
-      : "";
+          const mapLink =
+            typeof lat === "number" && typeof lng === "number"
+              ? `<a href="https://www.google.com/maps?q=${lat.toFixed(6)},${lng.toFixed(6)}" target="_blank">Open in Google Maps</a>`
+              : "";
 
-    const html = `
+          const html = `
       <div box-="double">
         <img src="${thumbnail}" alt="${title}" style="width: 100%; display: block;" />
         <div style="padding-bottom: 0.25rem; padding-top: 0.25rem;"></div>
@@ -123,10 +132,9 @@
       </div>
     `;
 
-    container.insertAdjacentHTML("beforeend", html);
-  });
-</script>
-
-
+          container.insertAdjacentHTML("beforeend", html);
+        },
+      );
+    </script>
   </body>
 </html>
