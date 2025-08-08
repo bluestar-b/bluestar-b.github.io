@@ -1,7 +1,6 @@
 @layer base, utils, components;
 @import "@webtui/css/base.css";
 @import "@webtui/css/utils/box.css";
-@import "@webtui/css/components/typography.css";
 @import "@webtui/plugin-nf";
 @import "@webtui/css/components/badge.css";
 
@@ -29,6 +28,14 @@ img {
   font-style: normal;
   font-weight: 400;
 }
+@font-face {
+  font-family: "OCR-A";
+  src: url("/fonts/OCRA.woff2") format("woff2");
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+}
 
 :root {
   color-scheme: dark;
@@ -44,6 +51,10 @@ img {
   background-color: #262eff;
   color: #fff;
   padding: 0 4px;
+}
+
+section {
+  margin-top: 1.2rem;
 }
 
 h1,
@@ -106,10 +117,22 @@ body {
   color: var(--text-color);
 }
 
+.MRZ {
+  font-family: "OCR-A", monospace;
+  font-size: 0.475rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+}
+
+.exif-grid {
+  font-family: "OCR-A", monospace;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
   max-width: 768px;
+  padding: 8px;
 }
 
 .window-header {

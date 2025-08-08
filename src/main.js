@@ -93,9 +93,10 @@ function updateClock() {
     month: "long",
     day: "numeric",
   });
-
+  /*
   document.getElementById("datetime").textContent =
     `${dateStr} — ${userHours}:${userMinutes}:${userSeconds}`;
+    */
 
   const userVibe = getVibe(userHours);
   document.getElementById("greeting").textContent = getGreeting(userVibe);
