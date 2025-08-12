@@ -21,7 +21,6 @@
     />
     <meta name="twitter:image" content="" />
     <link type="text/plain" rel="author" href="/humans.txt" />
-    <style></style>
   </head>
   <body data-webtui-theme="dark">
     <main class="container">
@@ -32,7 +31,7 @@
           >
         </div>
         <header>
-          <h1>My yappings</h1>
+          <h1>My feeds</h1>
           <p>It's your web worker job to parse markdown thanks client :3</p>
         </header>
 
@@ -124,10 +123,18 @@
             .map(async (post) => {
               const parsedContent = await markdownParse(post.content);
               return `
-          <div class="post" box-="square">
-            <h3 class="post-date">${new Date(post.posting_date).toLocaleString()}</h3>
-            <div class="post-content">${parsedContent}</div>
-          </div>
+
+
+<div box-="square" shear-="top">
+  <div class="header date-header embossed-text">
+      <span>${new Date(post.posting_date).toLocaleString("en-GB", { hour12: false })}</span>
+  </div>
+
+  <div class="post-content">${parsedContent}</div>
+</div>
+
+
+	      
         `;
             }),
         );
