@@ -7,7 +7,7 @@ export default defineConfig({
         main: "./index.html",
         gallery: "./gallery.html",
         reimagined: "./reimagined.html",
-        yap: "./yap.html",
+        feed: "./feed.html",
         worker1: "./markdownWorker.js",
         worker2: "./prefetch-worker.js",
         minimal: "./minimal.html",
