@@ -1,5 +1,73 @@
 const images = [
   {
+    title: "King Prajadhipok Museum",
+    desc: "Cool colonial building",
+    image:
+      "https://bluestar-b.github.io/bluestar-b/full_res/moments/IMG_20250817_113237.jpg",
+    thumbnail:
+      "https://bluestar-b.github.io/bluestar-b/full_res/moments/IMG_20250817_113237_thumb.jpg",
+    exif: {
+      Make: "Xiaomi",
+      Model: "M2006C3LG",
+      Software: "Adobe Lightroom 10.4.2 (Android)",
+      DateTimeOriginal: "2025:08:17 11:32:37",
+      DateTime: "2025:08:17 14:15:47",
+      Resolution: {
+        Width: 2896,
+        Height: 2460,
+        Megapixels: 7.12,
+      },
+      Orientation: null,
+      WhiteBalance: "Custom",
+      ISO: 111,
+      ExposureTime: "1/1800",
+      FNumber: "f/2.2",
+      ShutterSpeed: "1/1800",
+      Aperture: "2.20",
+      FocalLength: "3.43 mm",
+      FocalLength35mm: null,
+      GPS: null,
+      Flash: "Flash did not fire",
+      ColorSpace: "sRGB",
+      SceneType: null,
+      LensModel: null,
+    },
+  },
+  {
+    title: "Kraison Siharat Hall",
+    desc: "Also know as Yen Pavilion",
+    image:
+      "https://bluestar-b.github.io/bluestar-b/full_res/moments/IMG_20250819_162455.jpg",
+    thumbnail:
+      "https://bluestar-b.github.io/bluestar-b/full_res/moments/IMG_20250819_162455_thumb.jpg",
+    exif: {
+      Make: "INFINIX",
+      Model: "Infinix X6831",
+      Software: "Adobe Lightroom 10.4.2 (Android)",
+      DateTimeOriginal: "2025:08:19 16:24:55",
+      DateTime: "2025:08:20 08:46:20",
+      Resolution: {
+        Width: 4064,
+        Height: 2681,
+        Megapixels: 10.9,
+      },
+      Orientation: null,
+      WhiteBalance: "As Shot",
+      ISO: 100,
+      ExposureTime: "1/1250",
+      FNumber: "f/1.6",
+      ShutterSpeed: "1/1250",
+      Aperture: "1.60",
+      FocalLength: "4.09 mm",
+      FocalLength35mm: null,
+      GPS: null,
+      Flash: "Flash did not fire, compulsory flash mode",
+      ColorSpace: "sRGB",
+      SceneType: null,
+      LensModel: null,
+    },
+  },
+  {
     title: "Phra prang sam yot",
     desc: "Low saturation shot of phra prang sam yot",
     image:

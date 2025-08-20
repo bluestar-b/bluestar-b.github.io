@@ -1,4 +1,12 @@
 images:
+  - title: "King Prajadhipok Museum"
+    desc: "Cool colonial building"
+    image: "https://bluestar-b.github.io/bluestar-b/full_res/moments/IMG_20250817_113237.jpg"
+
+  - title: "Kraison Siharat Hall"
+    desc: "Also know as Yen Pavilion"
+    image: "https://bluestar-b.github.io/bluestar-b/full_res/moments/IMG_20250819_162455.jpg"
+
   - title: "Phra prang sam yot"
     desc: "Low saturation shot of phra prang sam yot"
     image: "https://bluestar-b.github.io/bluestar-b/full_res/missing_times/PSX_20240822_162521.jpg"
