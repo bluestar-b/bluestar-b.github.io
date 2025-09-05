@@ -30,6 +30,10 @@
   }
 }
 
+li {
+  list-style: none;
+}
+
 #greeting {
   color: #e1ebef;
   background: #024997;
@@ -151,6 +155,7 @@ a.navlink {
 a {
   color: var(--link-text-color);
   font-weight: 700;
+  text-decoration: none;
 }
 
 h2 {
