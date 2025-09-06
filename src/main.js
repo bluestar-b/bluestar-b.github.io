@@ -1,5 +1,15 @@
 import "./styles.css";
 
+function getTextElements() {
+  return Array.from(document.body.querySelectorAll("*")).filter((el) => {
+    return el.children.length === 0 && el.textContent.trim().length > 0;
+  });
+}
+
+document.getElementById("spin-trigger").addEventListener("click", () => {
+  getTextElements().forEach((el) => el.classList.add("spin"));
+});
+
 const schoolDays = [0, 3]; // Sunday, Wed
 
 function stripTime(date) {
