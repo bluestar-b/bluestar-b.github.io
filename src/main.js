@@ -5,10 +5,18 @@ function getTextElements() {
     return el.children.length === 0 && el.textContent.trim().length > 0;
   });
 }
-
+/*
 document.getElementById("spin-trigger").addEventListener("click", () => {
   getTextElements().forEach((el) => el.classList.add("spin"));
 });
+*/
+
+const trigger = document.getElementById("spin-trigger");
+if (trigger) {
+  trigger.addEventListener("click", () => {
+    getTextElements().forEach((el) => el.classList.add("spin"));
+  });
+}
 
 const schoolDays = [0, 3]; // Sunday, Wed
 
