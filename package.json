@@ -13,8 +13,6 @@
     "yaml": "^2.8.1"
   },
   "dependencies": {
-    "@webtui/css": "^0.1.4",
-    "@webtui/plugin-nf": "^0.0.1",
     "cities.json": "^1.1.50",
     "dotted-map": "^2.2.3",
     "exifreader": "^4.31.1",

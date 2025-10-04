@@ -7,12 +7,6 @@ settings:
 importers:
   .:
     dependencies:
-      "@webtui/css":
-        specifier: ^0.1.4
-        version: 0.1.4
-      "@webtui/plugin-nf":
-        specifier: ^0.0.1
-        version: 0.0.1
       cities.json:
         specifier: ^1.1.50
         version: 1.1.50
@@ -425,18 +419,6 @@ packages:
         integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==,
       }
 
-  "@webtui/css@0.1.4":
-    resolution:
-      {
-        integrity: sha512-ahFXXvxSC4R/+eE1vCjJVyusJyufJgiKY0DbbX1WArzE/Ix5Wkchh9aKQXGr035a6JFCCb+oc7vzlIOcYJ019w==,
-      }
-
-  "@webtui/plugin-nf@0.0.1":
-    resolution:
-      {
-        integrity: sha512-THKjOAKSswTQ5ImNf19Dd3z1vBkzG+kGA5uQp2FkHL21q6Wpwl07GOVReRxrSL9hFZ1Ao457BVkh/8jGO8YiZw==,
-      }
-
   "@xmldom/xmldom@0.9.8":
     resolution:
       {
@@ -761,10 +743,6 @@ snapshots:
       "@turf/helpers": 6.5.0
 
   "@types/estree@1.0.8": {}
-
-  "@webtui/css@0.1.4": {}
-
-  "@webtui/plugin-nf@0.0.1": {}
 
   "@xmldom/xmldom@0.9.8":
     optional: true

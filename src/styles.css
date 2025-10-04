@@ -1,9 +1,3 @@
-@layer base, utils, components;
-@import "@webtui/css/base.css";
-@import "@webtui/css/utils/box.css";
-@import "@webtui/plugin-nf";
-@import "@webtui/css/components/badge.css";
-
 .post {
   word-break: break-all;
 }
@@ -14,26 +8,22 @@
   border-radius: 2px;
 }
 
-@layer base {
-  :root {
-    /* Default background color */
-    --background0: #fff;
-    /* Background levels 1-3 */
-    --background1: #ddd;
-    --background2: #bbb;
-    --background3: #999;
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
 
-    /* Default foreground color */
-    --foreground0: #fff;
-    /* Foreground levels 1-2 */
-    --foreground1: #444;
-    --foreground2: #888;
+ul li::before {
+  content: ">";
+  margin-right: 8px;
+}
 
-    /* Border colors for various components/utils */
-    --box-border-color: var(--foreground0);
-    --table-border-color: var(--foreground0);
-    --separator-color: var(--foreground0);
-  }
+.badge {
+  background-color: white;
+  color: black;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .spin {
