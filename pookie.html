@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pookie Countdown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        color-scheme: dark;
+      }
+
+      body {
+        background-color: #000000;
+        color: #cfcfcf;
+        height: 100vh;
+        font-family: monospace;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      main {
+        max-width: min(70ch, 100% - 4rem);
+        margin-inline: auto;
+      }
+
+      h1 {
+        font-family: "Press Start 2P", cursive;
+        font-size: 1.5rem;
+        color: #ff8caf;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px #ff00ff;
+      }
+
+      #countdown {
+        font-size: 1.3rem;
+        background-color: #1e1e1e;
+        border: 1px solid #555555;
+        padding: 1rem 1rem;
+        border-radius: 8px;
+        font-family: "VT323", monospace;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>Pookie Countdown</h1>
+      <p>Ency said she will be femboy in next 4 year if she can't get a girl</p>
+      <sub>btw, countdown start at 2025/09 and end at 2029/09</sub>
+      <div id="countdown"></div>
+
+      <script>
+        const startDate = new Date("2025-09-01T00:00:00");
+        const endDate = new Date("2029-09-01T00:00:00");
+
+        function updateCountdown() {
+          const now = new Date();
+
+          if (now < startDate) {
+            document.getElementById("countdown").innerHTML =
+              "Countdown not started! T-minus " + formatTime(startDate - now);
+            return;
+          }
+
+          const diff = endDate - now;
+
+          if (diff <= 0) {
+            document.getElementById("countdown").innerHTML =
+              "0000Y 000D 00H:00M:00S:000MS → Ency is now a Pookie!";
+            return;
+          }
+
+          document.getElementById("countdown").innerHTML = formatTime(diff);
+        }
+
+        function formatTime(diff) {
+          const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+          const days = Math.floor(
+            (diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24),
+          );
+          const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((diff / (1000 * 60)) % 60);
+          const seconds = Math.floor((diff / 1000) % 60);
+          const milliseconds = diff % 1000;
+
+          return (
+            `${years.toString().padStart(4, "0")}Y ${days.toString().padStart(3, "0")}D ` +
+            `${hours.toString().padStart(2, "0")}H:` +
+            `${minutes.toString().padStart(2, "0")}M:` +
+            `${seconds.toString().padStart(2, "0")}S:` +
+            `${milliseconds.toString().padStart(3, "0")}MS`
+          );
+        }
+
+        setInterval(updateCountdown, 1);
+        updateCountdown();
+      </script>
+    </main>
+  </body>
+</html>

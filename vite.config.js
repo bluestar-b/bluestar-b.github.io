@@ -12,6 +12,7 @@ export default defineConfig({
         worker2: "./prefetch-worker.js",
         minimal: "./minimal.html",
         article: "./megapixels_is_a_lie.html",
+	pookie: "./pookie.html"
       },
     },
   },
