@@ -13,6 +13,7 @@ export default defineConfig({
         minimal: "./minimal.html",
         article: "./megapixels_is_a_lie.html",
         pookie: "./pookie.html",
+        thinkpad: "./thinkpad.html",
       },
     },
   },

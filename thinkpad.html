@@ -37,56 +37,30 @@
         margin: 0;
       }
 
-      /* full-screen blurred background image */
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-image: url("/images/thinkpad/bg.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        filter: blur(2px) brightness(0.8);
-        z-index: -1;
-      }
-
       .inline-logo {
         width: 50px;
         height: auto;
         vertical-align: middle;
       }
-      main.container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 1rem;
-        position: relative;
-        z-index: 1;
-      }
-
+  
       section {
         font-family: "Quantico", sans-serif;
         font-weight: 600;
         font-style: normal;
-
-        background-color: rgba(83, 66, 76, 0.35);
-        -webkit-backdrop-filter: blur(48px) saturate(120%);
-
-        backdrop-filter: blur(48px) saturate(120%);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 8px;
-        color: #fff;
-        padding: 1.5rem;
-        max-width: 900px;
-        width: 100%;
-        box-sizing: border-box;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
       }
     </style>
-
+    
     <main class="container">
       <section>
+        <div>
+          <div>
+            <a href="/" class="segment path" style="margin-right: 1rem"
+              >[ ~/ ]</a
+            >
+          </div>
+        </div>
+<br/>
+      <br/>
         THIS IS MY
         <img
           src="/images/thinkpad/thinkpad_logo.avif"
@@ -115,7 +89,7 @@
         AM SCATTERED AND FORGETFUL. I MUST TYPE TRUE. I MUST TYPE FASTER AND<br /><br />
         CLEANER THAN DEADLINES THAT COME FOR ME. I MUST OUTRUN LAG BEFORE LAG<br /><br />
         OVERTAKES ME. I WILL. BEFORE THE ALMIGHTY POWER BUTTON, I SWEAR THIS<br /><br />
-        CREED: MY
+        CREED. MY
         <img
           src="/images/thinkpad/thinkpad_logo.avif"
           class="inline-logo"
