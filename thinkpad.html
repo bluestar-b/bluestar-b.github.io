@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bluestar's site</title>
+
+    <meta property="og:title" content="i meow at cats" />
+    <meta
+      property="og:description"
+      content="I don't know what will come, but here we go."
+    />
+    <meta property="og:image" content="/" />
+    <meta name="theme-color" content="#ff87d5" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="i meow at cats" />
+    <meta
+      name="twitter:description"
+      content="I don't know what will come, but here we go."
+    />
+    <meta name="twitter:image" content="" />
+    <link type="text/plain" rel="author" href="/humans.txt" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      /* full-screen blurred background image */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("/images/thinkpad/bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: blur(2px) brightness(0.8);
+        z-index: -1;
+      }
+
+      .inline-logo {
+        width: 50px;
+        height: auto;
+        vertical-align: middle;
+      }
+      main.container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 1rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      section {
+        font-family: "Quantico", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+
+        background-color: rgba(83, 66, 76, 0.35);
+        -webkit-backdrop-filter: blur(48px) saturate(120%);
+
+        backdrop-filter: blur(48px) saturate(120%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        color: #fff;
+        padding: 1.5rem;
+        max-width: 900px;
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+
+    <main class="container">
+      <section>
+        THIS IS MY
+        <img
+          src="/images/thinkpad/thinkpad_logo.avif"
+          class="inline-logo"
+          alt="ThinkPad logo"
+        />. THERE ARE MANY LIKE IT, BUT THIS ONE IS MINE.<br /><br />
+        MY
+        <img
+          src="/images/thinkpad/thinkpad_logo.avif"
+          class="inline-logo"
+          alt="ThinkPad logo"
+        />
+        IS MY BEST FRIEND. IT IS MY LIFE. I MUST MASTER IT AS I MUST<br /><br />
+        MASTER MY LIFE. WITHOUT ME, MY
+        <img
+          src="/images/thinkpad/thinkpad_logo.avif"
+          class="inline-logo"
+          alt="ThinkPad logo"
+        />
+        IS IDLE. WITHOUT MY
+        <img
+          src="/images/thinkpad/thinkpad_logo.avif"
+          class="inline-logo"
+          alt="ThinkPad logo"
+        />, I<br /><br />
+        AM SCATTERED AND FORGETFUL. I MUST TYPE TRUE. I MUST TYPE FASTER AND<br /><br />
+        CLEANER THAN DEADLINES THAT COME FOR ME. I MUST OUTRUN LAG BEFORE LAG<br /><br />
+        OVERTAKES ME. I WILL. BEFORE THE ALMIGHTY POWER BUTTON, I SWEAR THIS<br /><br />
+        CREED: MY
+        <img
+          src="/images/thinkpad/thinkpad_logo.avif"
+          class="inline-logo"
+          alt="ThinkPad logo"
+        />
+        AND I ARE DEFENDERS OF PRODUCTIVITY. WE ARE THE<br /><br />
+        MASTERS OF CHAOS. WE ARE THE SURVIVORS OF MONDAY MORNINGS. SO BE IT,<br /><br />
+        UNTIL THERE IS NO BUG, BUT PEACE. AMEN.
+      </section>
+    </main>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
