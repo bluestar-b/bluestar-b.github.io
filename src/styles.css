@@ -69,6 +69,8 @@ li {
 }
 
 .embossed-text {
+  font-family: "Impact Label";
+  /*
   text-shadow:
     0.1px 0.1px 0 #111,
     0.2px 0.2px 0 #111,
@@ -79,7 +81,8 @@ li {
     -0.2px -0.2px 0 #fff,
     -0.3px -0.3px 0 #fff,
     -0.4px -0.4px 0 #fff,
-    -0.5px -0.5px 0 #fff;
+    -0.5px -0.5px 0 #fff;*/
+    
 }
 
 pre,
@@ -110,6 +113,17 @@ img {
   font-style: normal;
   font-weight: 400;
 }
+
+@font-face {
+  font-family: "Impact Label";
+  src: url("/fonts/Impact Label.woff2") format("woff2");
+  font-display: swap;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+}
+
+
 
 :root {
   color-scheme: dark;
