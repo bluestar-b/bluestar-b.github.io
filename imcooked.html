@@ -9,30 +9,81 @@
             background-color: black;
             color: white;
             font-family: monospace;
-            height: 100vh;
+            
             margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            width: 100%;
+            max-height: 80vh; 
+            object-fit: contain; 
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        blockquote {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 4px solid #ff8caf;
+            color: #ff8caf;
+        }
+
+        footer {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
     </style>
 </head>
 <body>
-    <p>
-        i just got kicked out of my house cause i wanna kill my dad and this is just the beginning of the story
-        <br/>
-        i will never give up and i will never stop trying until i die stop means death and i will never die
-        
-
-        <blockquote>
-            I think I have everything I need<br/>
-            It got dark, but now I think I see<br/>
-            The world around is full of arms still reaching out to me<br/>
-            I hear the notes and belt them back to you<br/>
-            I feel loved, I'm burning like a fuse<br/>
-            I'm not afraid 'cause I know I've got nothing left to lose<br/>
-
-            <footer><cite>Always Summer by Yellowcard</cite></footer>
-        </blockquote>
-
-    </p>
+    <div class="container">
+        <section id="1">
+            <h2>2024/03/20</h2>
+            <p>
+                i just got kicked out of my house cause i wanna kill my dad and this is just the beginning of the story
+                <br/>
+                i will never give up and i will never stop trying until i die stop means death and i will never die
+            </p>
+            <blockquote>
+                I think I have everything I need<br/>
+                It got dark, but now I think I see<br/>
+                The world around is full of arms still reaching out to me<br/>
+                I hear the notes and belt them back to you<br/>
+                I feel loved, I'm burning like a fuse<br/>
+                I'm not afraid 'cause I know I've got nothing left to lose<br/>
+                <footer><cite>Always Summer by Yellowcard</cite></footer>
+            </blockquote>
+        </section>
+        <section id="2">
+            <h2>2024/03/27</h2>
+            <p>
+                Today I received a medical certificate stating that I am not a crazy person, because he is trying to gaslight me. <br/>
+                And giving up is betrayal to myself...........................
+                <img src="/images/fked/cert.png" alt="Medical Certificate">
+                <small>Some information is redacted for privacy reasons.</small>
+            </p>   
+        </section>
+    </div>
 </body>
 </html>

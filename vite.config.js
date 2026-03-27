@@ -14,6 +14,7 @@ export default defineConfig({
         article: "./megapixels_is_a_lie.html",
         pookie: "./pookie.html",
         thinkpad: "./thinkpad.html",
+        imcooked: "./imcooked.html",
       },
     },
   },
