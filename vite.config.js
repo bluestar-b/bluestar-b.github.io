@@ -15,6 +15,7 @@ export default defineConfig({
         pookie: "./pookie.html",
         thinkpad: "./thinkpad.html",
         imcooked: "./imcooked.html",
+        countdown: "./countdown.html",
       },
     },
   },
