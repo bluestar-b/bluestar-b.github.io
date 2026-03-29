@@ -88,8 +88,7 @@
     </main>
     <script>
       const countdownElement = document.getElementById("countdown");
-
-      const target = new Date("2026-04-03T00:00:00Z").getTime();
+      const target = new Date("2026-04-03T00:00:00+07:00").getTime();
 
       function format(diff) {
         const totalSeconds = Math.floor(diff / 1000);
