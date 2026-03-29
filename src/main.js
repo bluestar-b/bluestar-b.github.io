@@ -11,7 +11,6 @@ document.getElementById("spin-trigger").addEventListener("click", () => {
 });
 */
 
-
 const trigger = document.getElementById("spin-trigger");
 if (trigger) {
   trigger.addEventListener("click", () => {

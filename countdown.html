@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bluestar's site</title>
+
+    <meta property="og:title" content="i meow at cats" />
+    <meta
+      property="og:description"
+      content="I don't know what will come, but here we go."
+    />
+    <meta property="og:image" content="/" />
+    <meta name="theme-color" content="#ff87d5" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="i meow at cats" />
+    <meta
+      name="twitter:description"
+      content="I don't know what will come, but here we go."
+    />
+    <meta name="twitter:image" content="" />
+    <link type="text/plain" rel="author" href="/humans.txt" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #0f0f0f !important;
+      }
+
+      .container {
+        max-width: 600px;
+        padding: 20px;
+      }
+
+      #countdown {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 1rem;
+      }
+
+      .tape {
+        font-family: "Impact Label";
+        color: #e1ebef;
+        display: inline-block;
+        user-select: none;
+        font-size: 1.25rem;
+        padding-top: 0.125rem;
+        padding-bottom: 0.125rem;
+        padding-left: 0.625rem; /* 10px */
+        padding-right: 0.625rem; /* 10px */
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section>
+        <div>
+          <h1
+            id="tape"
+            style="
+              background: #b62e32;
+              clip-path: polygon(1% 0, 99% 0, 99% 100%, 0% 100%);
+            "
+            class="tape"
+          >
+            I'm turning eighteen in
+          </h1>
+        </div>
+
+        <div
+          style="
+            background: #e1a008;
+            clip-path: polygon(0 0, 97% 0, 99% 100%, 1% 100%);
+          "
+          class="tape"
+          id="countdown"
+        ></div>
+      </section>
+    </main>
+    <script>
+      const countdownElement = document.getElementById("countdown");
+
+      const target = new Date("2026-04-03T00:00:00Z").getTime();
+
+      function format(diff) {
+        const totalSeconds = Math.floor(diff / 1000);
+
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        return `T-${String(days).padStart(2, "0")}:${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+      }
+
+      function tick() {
+        const now = Date.now();
+        const diff = target - now;
+
+        if (diff <= 0) {
+          countdownElement.textContent = "Well, I guess this is growing up";
+          clearInterval(timer);
+          return;
+        }
+
+        countdownElement.textContent = format(diff);
+      }
+
+      const timer = setInterval(tick, 1000);
+      tick();
+    </script>
+
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
