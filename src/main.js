@@ -18,6 +18,7 @@ if (trigger) {
   });
 }
 
+/* School status disabled for now.
 const schoolDays = [0, 3]; // Sunday, Wed
 
 function stripTime(date) {
@@ -86,6 +87,7 @@ const sentence = `My school days are every Wednesday and Sunday, so there are ${
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("schoolStatus").textContent = sentence;
 });
+*/
 
 function getVibe(hour) {
   if (hour >= 5 && hour < 12) return "morning";

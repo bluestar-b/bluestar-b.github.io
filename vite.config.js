@@ -1,6 +1,31 @@
 import { defineConfig } from "vite";
+import fs from "node:fs";
+
+const inlineHomeStyles = {
+  name: "inline-home-styles",
+  apply: "build",
+  transformIndexHtml: {
+    order: "post",
+    handler(html, context) {
+      if (!context.filename.endsWith("/index.html")) return html;
+
+      const styles = fs.readFileSync("src/styles.css", "utf8");
+      return html.replace(
+        /<link rel="stylesheet"[^>]*>/,
+        `<style>${styles}</style>`,
+      );
+    },
+  },
+};
 
 export default defineConfig({
+  server: {
+    allowedHosts: true,
+  },
+  preview: {
+    allowedHosts: true,
+  },
+  plugins: [inlineHomeStyles],
   build: {
     rollupOptions: {
       input: {
