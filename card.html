@@ -29,6 +29,10 @@
         width: min(92vw, 640px);
         perspective: 1500px;
         cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
       }
       .card-scene:fullscreen {
         width: 100vw;
@@ -47,6 +51,10 @@
         width: 100%;
         transform-style: preserve-3d;
         transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
       }
       .card.is-flipped {
         transform: rotateY(180deg);
