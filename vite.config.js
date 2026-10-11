@@ -41,6 +41,7 @@ export default defineConfig({
         thinkpad: "./thinkpad.html",
         imcooked: "./imcooked.html",
         countdown: "./countdown.html",
+        card: "./card.html",
       },
     },
   },
